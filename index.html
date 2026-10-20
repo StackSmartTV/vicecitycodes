@@ -171,6 +171,9 @@
       margin-top: 0.5rem;
     }
     .yt-btn:hover { opacity: 0.9; }
+    .yt-cta { text-align: center; }
+    .yt-icon { width: 128px; height: 128px; border-radius: 50%; display: block; margin: 0 auto 0.8rem; box-shadow: 0 0 20px rgba(255,45,149,0.4); }
+    .yt-handle { color: var(--neon-cyan); font-weight: 700; margin-bottom: 0.5rem; }
     footer {
       text-align: center;
       padding: 2.5rem 1rem;
@@ -286,14 +289,19 @@
 
     <section id="youtube">
       <h2>YouTube</h2>
-      <div class="card">
-        <h3>Watch on YouTube</h3>
-        <p>Check out guides, reactions, and launch day content on the channel.</p>
-        <!-- Replace the href below with your real YouTube channel URL -->
-        <a href="https://www.youtube.com/@YourChannelName" class="yt-btn" target="_blank" rel="noopener">
-          ▶ Subscribe on YouTube
+      <div class="card yt-cta">
+        <a href="https://www.youtube.com/@ViceCityCentralHub" target="_blank" rel="noopener" aria-label="GTA 6 Hub on YouTube">
+          <picture>
+            <source srcset="gta6hub-icon.webp" type="image/webp">
+            <img src="gta6hub-icon.png" alt="GTA 6 Hub channel icon" width="128" height="128" class="yt-icon" loading="lazy">
+          </picture>
         </a>
-        <p style="margin-top:1rem; font-size:0.85rem; color:var(--muted);">Update the link above with your actual channel URL.</p>
+        <h3>GTA 6 Hub on YouTube</h3>
+        <p class="yt-handle">@ViceCityCentralHub</p>
+        <p>GTA 6 fun facts, development stories, guides and verified news. New videos regularly.</p>
+        <a href="https://www.youtube.com/@ViceCityCentralHub" class="yt-btn" target="_blank" rel="noopener">
+          &#9654; Subscribe on YouTube
+        </a>
       </div>
     </section>
 
@@ -324,7 +332,7 @@
   <footer>
     <p>&copy; 2026 Vice City Codes. Unofficial fan site. Trademarks belong to their owners.</p>
     <p style="margin-top:0.5rem;">
-      <a href="https://www.youtube.com/@YourChannelName" style="color:var(--neon-cyan);" target="_blank" rel="noopener">YouTube</a> &bull;
+      <a href="https://www.youtube.com/@ViceCityCentralHub" style="color:var(--neon-cyan);" target="_blank" rel="noopener">YouTube</a> &bull;
       <a href="privacy.html" style="color:var(--neon-cyan);">Privacy Policy</a> &bull;
       <a href="contact.html" style="color:var(--neon-cyan);">Contact</a>
     </p>
