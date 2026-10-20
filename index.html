@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vice City Codes | GTA 6 Guide & Countdown</title>
+  <meta name="description" content="Neon-soaked countdown to GTA 6. Cheat codes, Vice City guides, and launch tips for Leonida.">
+  <style>
+    :root {
+      --bg: #0d0015;
+      --card: #1a0a28;
+      --neon-pink: #ff2d95;
+      --neon-cyan: #00f0ff;
+      --neon-purple: #b84dff;
+      --sunset: #ff6b35;
+      --text: #f0e6ff;
+      --muted: #c9b3e6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: radial-gradient(circle at 20% 30%, rgba(255,45,149,0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(0,240,255,0.1) 0%, transparent 40%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(180deg, #2a0040 0%, #0d0015 100%);
+      padding: 2.5rem 1rem 3.5rem;
+      text-align: center;
+      border-bottom: 2px solid var(--neon-pink);
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 30px rgba(255,45,149,0.5);
+      letter-spacing: 2px;
+    }
+    header p { color: var(--muted); font-size: 1.15rem; }
+    .hero-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      margin: 1.5rem auto;
+      display: block;
+      box-shadow: 0 0 40px rgba(255,45,149,0.4);
+      max-height: 280px;
+      object-fit: cover;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .time-box {
+      background: rgba(26,10,40,0.8);
+      border: 2px solid var(--neon-pink);
+      border-radius: 16px;
+      padding: 1rem 1.4rem;
+      min-width: 90px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255,45,149,0.3);
+    }
+    .time-box span {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--neon-cyan);
+      text-shadow: 0 0 10px var(--neon-cyan);
+    }
+    .time-box small { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+    nav {
+      background: rgba(13,0,21,0.95);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--neon-purple);
+      backdrop-filter: blur(10px);
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+    nav a:hover { color: var(--neon-pink); text-shadow: 0 0 8px var(--neon-pink); }
+    .container { max-width: 1050px; margin: 0 auto; padding: 2rem 1rem; }
+    section { margin: 3.5rem 0; }
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1.2rem;
+      color: var(--neon-cyan);
+      border-left: 5px solid var(--neon-pink);
+      padding-left: 0.8rem;
+      text-shadow: 0 0 10px rgba(0,240,255,0.4);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #3a1a55;
+      border-radius: 16px;
+      padding: 1.6rem;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 4px 20px rgba(184,77,255,0.15);
+    }
+    .card h3 { margin-bottom: 0.6rem; color: var(--neon-pink); }
+    .placeholder {
+      background: rgba(26,10,40,0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      color: var(--muted);
+      font-style: italic;
+      border-left: 3px solid var(--neon-purple);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0,240,255,0.3);
+    }
+    .ad-spot {
+      background: rgba(26,10,40,0.5);
+      border: 2px dashed var(--neon-purple);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin: 2rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .ad-spot strong { color: var(--neon-cyan); display: block; margin-bottom: 0.3rem; }
+    .promo-app {
+      background: linear-gradient(135deg, #2a0040, #1a0a28);
+      border: 2px solid var(--neon-pink);
+      border-radius: 16px;
+      padding: 1.8rem;
+      text-align: center;
+      margin: 2rem 0;
+      box-shadow: 0 0 25px rgba(255,45,149,0.3);
+    }
+    .promo-app h3 { color: var(--neon-pink); margin-bottom: 0.5rem; }
+    .yt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ff0000;
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+    .yt-btn:hover { opacity: 0.9; }
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--muted);
+      border-top: 1px solid #3a1a55;
+      margin-top: 4rem;
+      background: #0a0012;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--neon-pink), var(--sunset));
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 1rem;
+      box-shadow: 0 0 15px rgba(255,45,149,0.5);
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: scale(1.05); }
+    @media (max-width: 600px) {
+      .time-box { min-width: 68px; padding: 0.7rem; }
+      .time-box span { font-size: 1.6rem; }
+      nav a { display: block; margin: 0.6rem 0; }
+      .gallery { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VICE CITY CODES</h1>
+    <p>Neon nights • Leonida guides • Launch countdown</p>
+    <img src="vice-city-skyline.jpg" alt="Vice City neon skyline" class="hero-img" onerror="this.style.display='none'">
+    <div class="countdown">
+      <div class="time-box"><span id="days">--</span><small>Days</small></div>
+      <div class="time-box"><span id="hours">--</span><small>Hours</small></div>
+      <div class="time-box"><span id="minutes">--</span><small>Minutes</small></div>
+      <div class="time-box"><span id="seconds">--</span><small>Seconds</small></div>
+    </div>
+    <p>November 19, 2026 • PS5 & Xbox Series X|S</p>
+  </header>
+
+  <nav>
+    <a href="#cheats">Cheat Codes</a>
+    <a href="#guides">Guides</a>
+    <a href="#app">App</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#preorder">Pre-Order</a>
+  </nav>
+
+  <!-- Top ad spot -->
+  <div class="container">
+    <div class="ad-spot">
+      <strong>Advertisement</strong>
+      Ad spot — replace with your ad code or affiliate banner
+    </div>
+  </div>
+
+  <div class="container">
+    <section id="cheats">
+      <h2>Cheat Codes</h2>
+      <div class="card">
+        <h3>Current Status</h3>
+        <p class="placeholder">No official GTA 6 cheat codes confirmed yet. Rockstar hasn’t published any. Expect them after launch — this page updates the moment verified codes drop.</p>
+      </div>
+      <div class="card">
+        <h3>How GTA Cheats Usually Work</h3>
+        <ul>
+          <li>Controller button combos (while on foot)</li>
+          <li>In-game phone numbers</li>
+          <li>Single-player only</li>
+          <li>Often disables trophies for the session</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Mid-content ad spot -->
+    <div class="ad-spot">
+      <strong>Advertisement</strong>
+      Ad spot — ideal for display ads or affiliate links
+    </div>
+
+    <section id="guides">
+      <h2>Vice City Guides</h2>
+      <div class="gallery">
+        <img src="vice-neon-night.jpg" alt="Neon Vice City night" onerror="this.style.display='none'">
+        <img src="leonida-beach.jpg" alt="Leonida beach sunset" onerror="this.style.display='none'">
+        <img src="vice-city-cars.jpg" alt="Vice City street cars" onerror="this.style.display='none'">
+      </div>
+      <div class="card">
+        <h3>Pre-Launch Prep</h3>
+        <ul>
+          <li>Pre-load opens November 12</li>
+          <li>Update your console & clear space</li>
+          <li>Standard vs Ultimate Edition decision</li>
+          <li>Expect a big open-world download</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- App promo section -->
+    <section id="app">
+      <div class="promo-app">
+        <h3>📱 App Coming Soon</h3>
+        <p>Our official Vice City / GTA 6 companion app is in development. Get cheat codes, maps, and tips right on your phone.</p>
+        <p style="margin-top:0.8rem; color: var(--muted);">Sign up for early access updates — launching soon!</p>
+        <a href="#" class="btn">Notify Me</a>
+      </div>
+    </section>
+
+    <section id="youtube">
+      <h2>YouTube</h2>
+      <div class="card">
+        <h3>Watch on YouTube</h3>
+        <p>Check out guides, reactions, and launch day content on the channel.</p>
+        <!-- Replace the href below with your real YouTube channel URL -->
+        <a href="https://www.youtube.com/@YourChannelName" class="yt-btn" target="_blank" rel="noopener">
+          ▶ Subscribe on YouTube
+        </a>
+        <p style="margin-top:1rem; font-size:0.85rem; color:var(--muted);">Update the link above with your actual channel URL.</p>
+      </div>
+    </section>
+
+    <section id="preorder">
+      <h2>Pre-Order</h2>
+      <div class="card">
+        <h3>Editions</h3>
+        <p><strong>Standard</strong> ~$79.99<br><strong>Ultimate</strong> ~$99.99</p>
+        <a href="https://www.rockstargames.com/" class="btn" target="_blank" rel="noopener">Official Rockstar Site</a>
+      </div>
+    </section>
+
+    <!-- Bottom ad spot -->
+    <div class="ad-spot">
+      <strong>Advertisement</strong>
+      Ad spot — bottom of page
+    </div>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>Independent fan guide for Grand Theft Auto VI / Vice City / Leonida. Not affiliated with Rockstar Games or Take-Two.</p>
+        <p style="margin-top:1rem;">Only verified information will be posted. Always double-check with official sources.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Vice City Codes. Unofficial fan site. Trademarks belong to their owners.</p>
+    <p style="margin-top:0.5rem;">
+      <a href="https://www.youtube.com/@YourChannelName" style="color:var(--neon-cyan);" target="_blank" rel="noopener">YouTube</a>
+    </p>
+    <p style="margin-top:0.5rem; font-size:0.85rem;">Countdown targets midnight Eastern on November 19, 2026.</p>
+  </footer>
+
+  <script>
+    const launchDate = new Date('2026-11-19T05:00:00Z');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = launchDate - now;
+      if (diff <= 0) {
+        ['days','hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '0');
+        return;
+      }
+      document.getElementById('days').textContent = Math.floor(diff / 86400000);
+      document.getElementById('hours').textContent = Math.floor((diff % 86400000) / 3600000).toString().padStart(2,'0');
+      document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000).toString().padStart(2,'0');
+      document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000).toString().padStart(2,'0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
