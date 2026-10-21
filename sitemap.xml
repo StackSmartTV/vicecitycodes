@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://vicecodeshub.com/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/es/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/gta-5-cheats.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-5-cheats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/trucos-gta-5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/gta-5-cheats.html"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/es/trucos-gta-5.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-5-cheats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/trucos-gta-5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/gta-5-cheats.html"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/privacy.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/es/privacidad.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/contact.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/contact.html"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/es/contacto.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/contact.html"/>
+  </url>
+</urlset>

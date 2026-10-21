@@ -199,3 +199,59 @@
     .legal a { color: var(--neon-cyan); }
     .legal h3 { margin-top: 0.4rem; }
     .updated { color: var(--muted); font-size: 0.95rem; margin-top: 0.4rem; }
+
+    /* ===== Added: language switch, Shorts embeds, cheat tables, FAQ ===== */
+    .sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    nav .lang-switch { display:inline-block; margin:0 0.6rem; color:var(--muted); font-weight:700; white-space:nowrap; }
+    nav .lang-switch a { display:inline; margin:0 0.25rem; }
+    nav .lang-switch a[aria-current="page"] { color:var(--neon-cyan); text-shadow:0 0 8px var(--neon-cyan); }
+    .shorts-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 315px)); justify-content:center; gap:1.4rem; margin:1.2rem 0; }
+    .shorts-grid.single { grid-template-columns:minmax(240px, 315px); }
+    .short-embed { position:relative; width:100%; aspect-ratio:9 / 16; border-radius:16px; overflow:hidden; background:#000; border:1px solid #3a1a55; box-shadow:0 0 25px rgba(255,45,149,0.3); }
+    .short-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .yt-cta { text-align:center; }
+    .yt-handle { color:var(--neon-cyan); font-weight:700; margin-bottom:0.5rem; }
+    .tight li { margin:0.35rem 0 0.35rem 1.2rem; }
+    .note { margin-top:0.9rem; padding:0.8rem 1rem; border-left:3px solid var(--sunset); background:rgba(255,107,53,0.08); border-radius:8px; }
+    .muted { color:var(--muted); }
+    .small { font-size:0.85rem; }
+    .tabs { display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem 0 0.6rem; }
+    .tabs button { background:var(--card); color:var(--text); border:1px solid var(--neon-purple); border-radius:30px; padding:0.5rem 1.1rem; font-weight:700; cursor:pointer; font-size:0.9rem; }
+    .tabs button[aria-selected="true"] { background:linear-gradient(90deg, var(--neon-pink), var(--sunset)); border-color:transparent; }
+    .cat-jump { margin:0 0 1rem; font-size:0.9rem; }
+    .cat-jump a { color:var(--neon-cyan); margin-right:0.9rem; text-decoration:none; }
+    .cheat-table { width:100%; border-collapse:collapse; background:var(--card); border-radius:16px; overflow:hidden; font-size:0.92rem; }
+    .cheat-table th, .cheat-table td { padding:0.7rem 0.6rem; border-bottom:1px solid #3a1a55; text-align:left; vertical-align:top; }
+    .cheat-table thead th { background:#2a0040; color:var(--neon-cyan); text-transform:uppercase; letter-spacing:1px; font-size:0.8rem; }
+    .cheat-table .cat-row th { background:rgba(255,45,149,0.15); color:var(--neon-pink); font-size:1.05rem; scroll-margin-top:90px; }
+    .c-name strong { display:block; color:var(--text); }
+    .c-name small { display:block; color:var(--muted); font-weight:400; }
+    .combo { display:inline; line-height:2.1; }
+    .combo .sep { font-size:0; }
+    .k { display:inline-block; min-width:1.9em; padding:0.05em 0.4em; margin:0 0.12em 0.15em 0; text-align:center; font:700 0.8rem/1.6 system-ui, sans-serif; color:var(--text); background:#0d0015; border:1px solid #5a2a85; border-radius:6px; }
+    .ps-o { color:#ff5c7a; } .ps-x { color:#7aa7ff; } .ps-t { color:#3fe0b0; } .ps-s { color:#ff8ad8; }
+    .xb-a { color:#5ad15a; } .xb-b { color:#ff5c5c; } .xb-x { color:#5aa0ff; } .xb-y { color:#ffd84a; }
+    .cheat-table code { font:700 0.95rem/1.4 ui-monospace, Consolas, monospace; color:var(--neon-cyan); white-space:nowrap; }
+    .copy-btn { margin-left:0.35rem; background:transparent; color:var(--neon-pink); border:1px solid var(--neon-pink); border-radius:20px; padding:0.1rem 0.6rem; font-size:0.75rem; cursor:pointer; }
+    .copy-btn.done { background:var(--neon-pink); color:#fff; }
+    .cheats[data-platform="ps"] :is(.col-xb,.col-pc,.col-ph),
+    .cheats[data-platform="xb"] :is(.col-ps,.col-pc,.col-ph),
+    .cheats[data-platform="pc"] :is(.col-ps,.col-xb,.col-ph),
+    .cheats[data-platform="ph"] :is(.col-ps,.col-xb,.col-pc) { display:none; }
+    details.faq { background:var(--card); border:1px solid #3a1a55; border-radius:12px; padding:0.9rem 1.2rem; margin-bottom:0.8rem; }
+    details.faq summary { cursor:pointer; font-weight:700; color:var(--neon-pink); }
+    details.faq p { margin-top:0.6rem; }
+    @media (max-width: 760px) {
+      nav { display:flex; flex-wrap:wrap; justify-content:center; gap:0.2rem 0.9rem; padding:0.6rem; }
+      nav a { display:inline-block; margin:0.2rem 0; font-size:0.78rem; }
+      nav .lang-switch { margin:0.2rem 0; }
+      .cheat-table, .cheat-table tbody, .cheat-table tr, .cheat-table th, .cheat-table td { display:block; width:100%; }
+      .cheat-table thead { display:none; }
+      .cheat-table tr { border-bottom:1px solid #5a2a85; padding:0.4rem 0; }
+      .cheat-table td, .cheat-table th { border:0; padding:0.35rem 0.8rem; }
+      .cheat-table td::before { content:attr(data-label); display:block; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; color:var(--neon-cyan); }
+      .cheats[data-platform="ps"] :is(.col-xb,.col-pc,.col-ph),
+      .cheats[data-platform="xb"] :is(.col-ps,.col-pc,.col-ph),
+      .cheats[data-platform="pc"] :is(.col-ps,.col-xb,.col-ph),
+      .cheats[data-platform="ph"] :is(.col-ps,.col-xb,.col-pc) { display:none; }
+    }
