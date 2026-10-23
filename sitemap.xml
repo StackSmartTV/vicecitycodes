@@ -72,4 +72,22 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/contacto.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/contact.html"/>
   </url>
+  <url>
+    <loc>https://vicecodeshub.com/super-squad-dash/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/super-squad-dash/privacy.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/super-squad-dash/support.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
