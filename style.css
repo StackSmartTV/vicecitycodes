@@ -255,3 +255,8 @@
       .cheats[data-platform="pc"] :is(.col-ps,.col-xb,.col-ph),
       .cheats[data-platform="ph"] :is(.col-ps,.col-xb,.col-pc) { display:none; }
     }
+
+    /* AdSense display units */
+    .ad-wrap { max-width:1050px; margin:12px auto; padding:0 1rem; box-sizing:border-box; text-align:center; }
+    .ad-wrap ins.adsbygoogle { width:100%; }
+    @media (max-width: 600px) { .ad-wrap { margin:8px auto; padding:0 0.5rem; } }
