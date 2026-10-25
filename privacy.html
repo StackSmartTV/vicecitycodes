@@ -23,18 +23,33 @@
   <meta name="twitter:image" content="https://vicecodeshub.com/vice-city-skyline.jpg">
   <link rel="preload" href="anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
-<!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor accepts -->
+<!-- Google tag (gtag.js) with Consent Mode v2.
+     EEA/UK/CH: everything denied until Google's consent message (ads) and our banner (analytics) update it.
+     Elsewhere: ads follow the US opt-out model (Google's US state message); GPC or our own opt-out denies ad data.
+     Analytics stays denied everywhere until the visitor taps Accept on our banner. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var vccAdsOptOut = (function(){try{return navigator.globalPrivacyControl===true||localStorage.getItem('vcc-ads-optout')==='1';}catch(e){return navigator.globalPrivacyControl===true;}})();
   gtag('consent', 'default', {
-    'analytics_storage': 'denied',
     'ad_storage': 'denied',
     'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+    'wait_for_update': 500
+  });
+  gtag('consent', 'default', {
+    'ad_storage': vccAdsOptOut ? 'denied' : 'granted',
+    'ad_user_data': vccAdsOptOut ? 'denied' : 'granted',
+    'ad_personalization': vccAdsOptOut ? 'denied' : 'granted',
+    'analytics_storage': 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
-  (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  if (vccAdsOptOut) {
+    gtag('set', 'restricted_data_processing', true);
+    (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  }
   (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
   gtag('config', 'G-RCMHE7MJPD', {
@@ -145,28 +160,38 @@
 
       <div class="card" id="cookies">
         <h3>Cookies &amp; Analytics (Your Choice)</h3>
-        <p>The Site uses <strong>Google Analytics 4</strong> (Google LLC) to count visits and see which pages are popular. Analytics cookies are <strong>off by default</strong>. We use Google Consent Mode, so until you choose, Google is told that analytics storage, ad storage, ad user data, and ad personalization are all denied, and Google Analytics does not set or read its cookies on your device.</p>
+        <p>The Site uses <strong>Google Analytics 4</strong> (Google LLC) to count visits and see which pages are popular. Analytics cookies are <strong>off by default</strong>. We use Google Consent Mode, so until you tap Accept, Google is told that analytics storage is denied, and Google Analytics does not set or read its cookies on your device. Our cookie banner controls <strong>analytics only</strong>; advertising choices are handled by Google&rsquo;s own consent and opt-out messages, described below.</p>
         <ul>
-          <li><strong>Accept:</strong> Google Analytics may set first-party cookies (such as <code>_ga</code>) to measure visits. Google signals and ad personalization stay turned off, and Google Analytics 4 does not log or store full IP addresses.</li>
+          <li><strong>Accept:</strong> Google Analytics may set first-party cookies (such as <code>_ga</code>) to measure visits. Google signals stay turned off, analytics data is not used for ad personalization, and Google Analytics 4 does not log or store full IP addresses.</li>
           <li><strong>Reject:</strong> analytics cookies are not used, and any existing Google Analytics cookies for this Site are removed. Google may still receive limited, cookieless pings without identifiers, as described in Google&rsquo;s Consent Mode documentation.</li>
-          <li><strong>Advertising:</strong> regardless of your choice, ad storage and ad personalization stay denied in Google Consent Mode, and Google AdSense on this Site is set to show <strong>non-personalized ads only</strong>. Non-personalized ads are based on context (such as the page you are reading and your general location), not on your browsing history. Google may still use cookies or similar technologies for frequency capping, aggregated ad reporting, and to combat fraud and abuse, as described in the AdSense section below.</li>
-          <li><strong>Global Privacy Control:</strong> if your browser sends a Global Privacy Control (GPC) signal, we treat it as a Reject automatically and do not show the banner.</li>
+          <li><strong>Advertising:</strong> ads on the Site are served by Google AdSense and <strong>may be personalized</strong> based on cookies and similar technologies. In the European Economic Area, the United Kingdom, and Switzerland, ad storage, ad user data, and ad personalization are denied by default, and Google asks for your consent through its own consent message (with Consent, Manage options, and Do not consent choices) before personalized ads are shown. Elsewhere, including the United States, ads may be personalized unless you opt out (see <a href="#do-not-sell">Do Not Sell or Share</a>). See the AdSense section below for details.</li>
+          <li><strong>Global Privacy Control:</strong> if your browser sends a Global Privacy Control (GPC) signal, we treat it as a Reject for analytics and as an opt-out of the sale or sharing of personal information for advertising: we tell Google to deny ad storage, ad user data, and ad personalization, turn on restricted data processing, and request non-personalized ads. We do not show our banner in that case.</li>
+          <li><strong>EEA, UK, and Switzerland:</strong> where Google&rsquo;s consent message applies, our analytics banner does not pop up on its own, so you are not shown two banners. Analytics stays off unless you turn it on with <strong>Cookie settings</strong>.</li>
         </ul>
         <p>Your choice is saved in your browser&rsquo;s local storage (key <code>vcc-consent</code>) so we don&rsquo;t ask again on every page. To change it, click <strong>Cookie settings</strong> in the footer of any page, or clear this Site&rsquo;s data in your browser.</p>
       </div>
 
       <div class="card" id="do-not-sell">
         <h3>Do Not Sell or Share My Personal Information</h3>
-        <p>We do not sell personal information, and we do not share it for cross-context behavioral advertising. Personalized advertising is turned off on this Site, and we honor Global Privacy Control signals as an opt-out. If you live in California or another U.S. state with a privacy law, you can also opt out by clicking <strong>Reject</strong> in Cookie settings, or ask to know, correct, or delete information by emailing <a href="mailto:mdecoded303@gmail.com">mdecoded303@gmail.com</a>. Visitors in the European Economic Area and the United Kingdom may also have rights to access, delete, or object to processing, and to withdraw consent at any time through Cookie settings. We will not treat you differently for using these rights.</p>
+        <p>We do not sell personal information for money. However, Google AdSense may use cookies and similar technologies on the Site to show personalized ads, which some U.S. state privacy laws (such as California&rsquo;s) may treat as &ldquo;selling&rdquo; or &ldquo;sharing&rdquo; personal information for targeted or cross-context behavioral advertising. You can opt out at any time:</p>
+        <ul>
+          <li>Use the <strong>Do Not Sell or Share My Personal Information</strong> link that Google&rsquo;s U.S. state regulations message shows to visitors in states where it applies.</li>
+          <li>Or use this button to opt out on this browser (we then tell Google to deny ad storage, ad user data, and ad personalization, turn on restricted data processing, and request non-personalized ads): <button type="button" class="cc-btn" data-ads-optout data-label-off="Opt out of personalized ads" data-label-on="Opt back in to personalized ads">Opt out of personalized ads</button> <span data-ads-optout-status role="status"></span></li>
+          <li>Send a <strong>Global Privacy Control</strong> signal from your browser; we honor it automatically as an opt-out.</li>
+          <li>Manage how Google personalizes ads for you at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>.</li>
+        </ul>
+        <p>If you live in California or another U.S. state with a privacy law, you can also ask to know, correct, or delete information by emailing <a href="mailto:mdecoded303@gmail.com">mdecoded303@gmail.com</a>. Visitors in the European Economic Area, the United Kingdom, and Switzerland may also have rights to access, delete, or object to processing, and to withdraw consent at any time (for ads, through Google&rsquo;s privacy and cookie settings link shown on the page; for analytics, through Cookie settings). We will not treat you differently for using these rights.</p>
       </div>
 
       <div class="card">
         <h3>Google AdSense and Third-Party Advertising</h3>
-        <p>We use Google AdSense to show ads on the Site. Please note:</p>
+        <p>We use Google AdSense to show ads on the Site. Ads may be personalized by Google AdSense based on cookies and similar technologies, depending on where you are and the choices you make. Please note:</p>
         <ul>
           <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this Site or other websites.</li>
           <li>Google&rsquo;s use of advertising cookies, including the DoubleClick cookie, enables it and its partners to serve ads to you based on your visits to this Site and/or other sites on the Internet.</li>
-          <li>You may opt out of personalized advertising by visiting Google&rsquo;s <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Ads Settings</a>.</li>
+          <li><strong>EEA, UK, and Switzerland:</strong> Google asks for your consent through its own consent message (a Google-certified consent management platform using the IAB Transparency &amp; Consent Framework) before using cookies for personalized ads. You can choose Consent, Manage options, or Do not consent, and change your choice later.</li>
+          <li><strong>United States:</strong> you can opt out of the sale or sharing of your information for targeted advertising using the Do Not Sell or Share link (see <a href="#do-not-sell">above</a>), and we honor Global Privacy Control signals.</li>
+          <li>You may opt out of personalized advertising by visiting Google&rsquo;s <a href="https://adssettings.google.com" target="_blank" rel="noopener">Ads Settings</a>.</li>
           <li>You can also opt out of some third-party vendors&rsquo; use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener">www.aboutads.info</a>.</li>
           <li>Other third-party vendors or ad networks may also use cookies to serve ads on the Site.</li>
         </ul>

@@ -23,18 +23,33 @@
   <meta name="twitter:image" content="https://vicecodeshub.com/vice-city-skyline.jpg">
   <link rel="preload" href="../anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../style.css">
-<!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor accepts -->
+<!-- Google tag (gtag.js) with Consent Mode v2.
+     EEA/UK/CH: everything denied until Google's consent message (ads) and our banner (analytics) update it.
+     Elsewhere: ads follow the US opt-out model (Google's US state message); GPC or our own opt-out denies ad data.
+     Analytics stays denied everywhere until the visitor taps Accept on our banner. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var vccAdsOptOut = (function(){try{return navigator.globalPrivacyControl===true||localStorage.getItem('vcc-ads-optout')==='1';}catch(e){return navigator.globalPrivacyControl===true;}})();
   gtag('consent', 'default', {
-    'analytics_storage': 'denied',
     'ad_storage': 'denied',
     'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+    'wait_for_update': 500
+  });
+  gtag('consent', 'default', {
+    'ad_storage': vccAdsOptOut ? 'denied' : 'granted',
+    'ad_user_data': vccAdsOptOut ? 'denied' : 'granted',
+    'ad_personalization': vccAdsOptOut ? 'denied' : 'granted',
+    'analytics_storage': 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
-  (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  if (vccAdsOptOut) {
+    gtag('set', 'restricted_data_processing', true);
+    (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  }
   (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
   gtag('config', 'G-RCMHE7MJPD', {
@@ -130,23 +145,36 @@
       <div class="card"><h3>Cookies</h3>
         <p>Las cookies son pequeños archivos de texto que tu navegador guarda en tu dispositivo. Si aceptas las cookies de analítica, usamos cookies de Google Analytics para medir el tráfico (consulta Cookies y analítica más abajo). Nuestros socios, incluidos los de publicidad y analítica, pueden colocar y leer cookies o usar tecnologías similares cuando nos visitas. Puedes bloquear o borrar las cookies desde la configuración de tu navegador.</p></div>
       <div class="card" id="cookies"><h3>Cookies y analítica (tu elección)</h3>
-        <p>El Sitio usa <strong>Google Analytics 4</strong> (Google LLC) para contar visitas y ver qué páginas son populares. Las cookies de analítica están <strong>desactivadas por defecto</strong>. Usamos el Modo de consentimiento de Google: hasta que elijas, Google recibe la indicación de que el almacenamiento de analítica, el almacenamiento publicitario, los datos de usuario para anuncios y la personalización de anuncios están denegados, y Google Analytics no coloca ni lee sus cookies en tu dispositivo.</p>
+        <p>El Sitio usa <strong>Google Analytics 4</strong> (Google LLC) para contar visitas y ver qué páginas son populares. Las cookies de analítica están <strong>desactivadas por defecto</strong>. Usamos el Modo de consentimiento de Google: hasta que toques Aceptar, Google recibe la indicación de que el almacenamiento de analítica está denegado, y Google Analytics no coloca ni lee sus cookies en tu dispositivo. Nuestro aviso de cookies controla <strong>solo la analítica</strong>; las opciones de publicidad las gestionan los mensajes de consentimiento y exclusión de Google, que se describen más abajo.</p>
         <ul>
-          <li><strong>Aceptar:</strong> Google Analytics puede colocar cookies propias (como <code>_ga</code>) para medir visitas. Las señales de Google y la personalización de anuncios siguen desactivadas, y Google Analytics 4 no registra ni guarda direcciones IP completas.</li>
+          <li><strong>Aceptar:</strong> Google Analytics puede colocar cookies propias (como <code>_ga</code>) para medir visitas. Las señales de Google siguen desactivadas, los datos de analítica no se usan para personalizar anuncios, y Google Analytics 4 no registra ni guarda direcciones IP completas.</li>
           <li><strong>Rechazar:</strong> no se usan cookies de analítica y se eliminan las cookies de Google Analytics existentes de este Sitio. Google puede seguir recibiendo señales limitadas sin cookies ni identificadores, según la documentación del Modo de consentimiento de Google.</li>
-          <li><strong>Publicidad:</strong> sin importar tu elección, el almacenamiento publicitario y la personalización de anuncios siguen denegados en el Modo de consentimiento de Google, y Google AdSense en este Sitio está configurado para mostrar <strong>solo anuncios no personalizados</strong>. Estos anuncios se basan en el contexto (como la página que lees y tu ubicación general), no en tu historial de navegación. Google puede seguir usando cookies o tecnologías similares para limitar la frecuencia, generar informes publicitarios agregados y combatir el fraude y el abuso, como se describe en la sección de AdSense.</li>
-          <li><strong>Global Privacy Control:</strong> si tu navegador envía la señal Global Privacy Control (GPC), la tratamos automáticamente como un rechazo y no mostramos el aviso.</li>
+          <li><strong>Publicidad:</strong> los anuncios del Sitio los ofrece Google AdSense y <strong>pueden ser personalizados</strong> según cookies y tecnologías similares. En el Espacio Económico Europeo, el Reino Unido y Suiza, el almacenamiento publicitario, los datos de usuario para anuncios y la personalización de anuncios están denegados por defecto, y Google te pide el consentimiento con su propio mensaje (con las opciones Consentir, Gestionar opciones y No consentir) antes de mostrar anuncios personalizados. En otros lugares, incluido Estados Unidos, los anuncios pueden ser personalizados salvo que te excluyas (consulta <a href="#no-vender">No vender ni compartir</a>). Más detalles en la sección de AdSense.</li>
+          <li><strong>Global Privacy Control:</strong> si tu navegador envía la señal Global Privacy Control (GPC), la tratamos como un rechazo de la analítica y como una exclusión de la venta o el intercambio de información personal para publicidad: indicamos a Google que deniegue el almacenamiento publicitario, los datos de usuario para anuncios y la personalización de anuncios, activamos el tratamiento restringido de datos y pedimos anuncios no personalizados. En ese caso no mostramos nuestro aviso.</li>
+          <li><strong>EEE, Reino Unido y Suiza:</strong> donde se aplica el mensaje de consentimiento de Google, nuestro aviso de analítica no aparece solo, para que no veas dos avisos. La analítica sigue desactivada salvo que la actives en <strong>Configuración de cookies</strong>.</li>
         </ul>
         <p>Tu elección se guarda en el almacenamiento local de tu navegador (clave <code>vcc-consent</code>) para no preguntarte en cada página. Para cambiarla, haz clic en <strong>Configuración de cookies</strong> al pie de cualquier página, o borra los datos de este Sitio en tu navegador.</p></div>
       <div class="card" id="no-vender"><h3>No vender ni compartir mi información personal</h3>
-        <p>No vendemos información personal ni la compartimos para publicidad conductual entre contextos. La publicidad personalizada está desactivada en este Sitio y respetamos la señal Global Privacy Control como una exclusión. Si vives en California u otro estado de EE. UU. con una ley de privacidad, también puedes excluirte haciendo clic en <strong>Rechazar</strong> en Configuración de cookies, o pedir conocer, corregir o eliminar tu información escribiendo a <a href="mailto:mdecoded303@gmail.com">mdecoded303@gmail.com</a>. Los visitantes del Espacio Económico Europeo y del Reino Unido también pueden tener derecho a acceder, eliminar u oponerse al tratamiento, y a retirar su consentimiento en cualquier momento desde Configuración de cookies. No te trataremos de forma distinta por ejercer estos derechos.</p></div>
+        <p>No vendemos información personal a cambio de dinero. Sin embargo, Google AdSense puede usar cookies y tecnologías similares en el Sitio para mostrar anuncios personalizados, lo que algunas leyes estatales de privacidad de EE. UU. (como la de California) pueden considerar &ldquo;vender&rdquo; o &ldquo;compartir&rdquo; información personal para publicidad dirigida o conductual entre contextos. Puedes excluirte en cualquier momento:</p>
+        <ul>
+          <li>Usa el enlace <strong>No vender ni compartir mi información personal</strong> que muestra el mensaje de regulaciones estatales de EE. UU. de Google en los estados donde aplica.</li>
+          <li>O usa este botón para excluirte en este navegador (indicamos a Google que deniegue el almacenamiento publicitario, los datos de usuario para anuncios y la personalización de anuncios, activamos el tratamiento restringido de datos y pedimos anuncios no personalizados): <button type="button" class="cc-btn" data-ads-optout data-label-off="Excluirme de los anuncios personalizados" data-label-on="Volver a permitir anuncios personalizados">Excluirme de los anuncios personalizados</button> <span data-ads-optout-status role="status"></span></li>
+          <li>Envía la señal <strong>Global Privacy Control</strong> desde tu navegador; la respetamos automáticamente como una exclusión.</li>
+          <li>Gestiona cómo Google personaliza tus anuncios en la <a href="https://adssettings.google.com" target="_blank" rel="noopener">Configuración de anuncios de Google</a>.</li>
+        </ul>
+        <p>Si vives en California u otro estado de EE. UU. con una ley de privacidad, también puedes pedir conocer, corregir o eliminar tu información escribiendo a <a href="mailto:mdecoded303@gmail.com">mdecoded303@gmail.com</a>. Los visitantes del Espacio Económico Europeo, el Reino Unido y Suiza también pueden tener derecho a acceder, eliminar u oponerse al tratamiento, y a retirar su consentimiento en cualquier momento (para anuncios, con el enlace de privacidad y cookies de Google que aparece en la página; para analítica, desde Configuración de cookies). No te trataremos de forma distinta por ejercer estos derechos.</p></div>
       <div class="card"><h3>Google AdSense y publicidad de terceros</h3>
+        <p>Usamos Google AdSense para mostrar anuncios en el Sitio. Google AdSense puede personalizar los anuncios según cookies y tecnologías similares, dependiendo de dónde estés y de tus elecciones.</p>
         <ul>
           <li>Proveedores externos, incluido Google, usan cookies para mostrar anuncios según tus visitas anteriores a este Sitio o a otros sitios web.</li>
           <li>El uso de cookies publicitarias por parte de Google le permite a Google y a sus socios mostrarte anuncios según tus visitas a este Sitio y/o a otros sitios de Internet.</li>
-          <li>Puedes desactivar la publicidad personalizada en la <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Configuración de anuncios</a> de Google.</li>
+          <li><strong>EEE, Reino Unido y Suiza:</strong> Google te pide el consentimiento con su propio mensaje (una plataforma de gestión del consentimiento certificada por Google que usa el Marco de Transparencia y Consentimiento de IAB) antes de usar cookies para anuncios personalizados. Puedes elegir Consentir, Gestionar opciones o No consentir, y cambiar tu elección después.</li>
+          <li><strong>Estados Unidos:</strong> puedes excluirte de la venta o el intercambio de tu información para publicidad dirigida con el enlace No vender ni compartir (consulta <a href="#no-vender">arriba</a>), y respetamos la señal Global Privacy Control.</li>
+          <li>Puedes desactivar la publicidad personalizada en la <a href="https://adssettings.google.com" target="_blank" rel="noopener">Configuración de anuncios</a> de Google.</li>
           <li>También puedes desactivar el uso de cookies de algunos proveedores externos para publicidad personalizada en <a href="https://www.aboutads.info" target="_blank" rel="noopener">www.aboutads.info</a>.</li>
-        </ul></div>
+        </ul>
+        <p>Para saber cómo Google recopila y usa datos cuando usas sitios o apps de sus socios, consulta <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Cómo usa Google la información de sitios o apps que usan sus servicios</a>.</p>
+        <p>Los visitantes de ciertas regiones (por ejemplo, el Espacio Económico Europeo, el Reino Unido, Suiza o algunos estados de EE. UU.) pueden ver un mensaje de consentimiento o tener derechos adicionales sobre el uso de sus datos para publicidad.</p></div>
   <div class="ad-wrap ad-in-content">
     <span class="ad-label">Publicidad</span>
     <!-- vch-in-content -->

@@ -23,18 +23,33 @@
   <meta name="twitter:image" content="https://vicecodeshub.com/vice-city-skyline.jpg">
   <link rel="preload" href="anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
-<!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor accepts -->
+<!-- Google tag (gtag.js) with Consent Mode v2.
+     EEA/UK/CH: everything denied until Google's consent message (ads) and our banner (analytics) update it.
+     Elsewhere: ads follow the US opt-out model (Google's US state message); GPC or our own opt-out denies ad data.
+     Analytics stays denied everywhere until the visitor taps Accept on our banner. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var vccAdsOptOut = (function(){try{return navigator.globalPrivacyControl===true||localStorage.getItem('vcc-ads-optout')==='1';}catch(e){return navigator.globalPrivacyControl===true;}})();
   gtag('consent', 'default', {
-    'analytics_storage': 'denied',
     'ad_storage': 'denied',
     'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+    'wait_for_update': 500
+  });
+  gtag('consent', 'default', {
+    'ad_storage': vccAdsOptOut ? 'denied' : 'granted',
+    'ad_user_data': vccAdsOptOut ? 'denied' : 'granted',
+    'ad_personalization': vccAdsOptOut ? 'denied' : 'granted',
+    'analytics_storage': 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
-  (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  if (vccAdsOptOut) {
+    gtag('set', 'restricted_data_processing', true);
+    (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  }
   (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
   gtag('config', 'G-RCMHE7MJPD', {

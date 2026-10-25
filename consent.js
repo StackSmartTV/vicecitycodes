@@ -1,7 +1,13 @@
-/* Vice City Codes cookie consent (self-hosted, no third-party CMP).
-   Google Consent Mode v2 defaults are set inline in each page <head>
-   (everything denied). This file shows the banner, saves the choice,
-   and honors Global Privacy Control (GPC) as a Reject. */
+/* Vice City Codes analytics consent banner (self-hosted).
+   Google Consent Mode v2 defaults are set inline in each page <head>:
+   EEA/UK/CH deny everything until Google's own consent message (ads) and this
+   banner (analytics) update it; elsewhere ads follow the US opt-out model run by
+   Google's US state regulations message. This banner controls ONLY
+   analytics_storage, never ad_* signals, so it cannot override Google's message.
+   GPC is honored as an analytics Reject and an ads opt-out (set in <head>).
+   Where Google's TCF message applies (gdprApplies), the banner does not pop up
+   on its own, so EEA/UK/CH visitors never see two banners at once; analytics
+   simply stays off unless they opt in via "Cookie settings". */
 (function () {
   'use strict';
   var KEY = 'vcc-consent';
@@ -13,25 +19,81 @@
   var T = es ? {
     label: 'Aviso de cookies',
     title: 'Cookies y analítica',
-    body: 'Usamos Google Analytics para contar visitas solo si lo aceptas. Los anuncios personalizados siempre están desactivados. Puedes cambiar tu elección en cualquier momento con “Configuración de cookies” al pie de la página.',
-    gpc: 'Tu navegador envía la señal Global Privacy Control (GPC). La respetamos como un rechazo: las cookies de analítica están desactivadas y los anuncios nunca son personalizados.',
-    accept: 'Aceptar', reject: 'Rechazar', ok: 'Entendido', more: 'Más información'
+    body: 'Usamos Google Analytics para contar visitas solo si lo aceptas. Los anuncios los ofrece Google AdSense y pueden ser personalizados; puedes excluirte con “No vender ni compartir” al pie de la página. Cambia tu elección de analítica cuando quieras con “Configuración de cookies”.',
+    gpc: 'Tu navegador envía la señal Global Privacy Control (GPC). La respetamos: las cookies de analítica están desactivadas y pedimos a Google que no personalice anuncios ni use tus datos para publicidad.',
+    accept: 'Aceptar', reject: 'Rechazar', ok: 'Entendido', more: 'Más información',
+    optedOut: 'Te excluiste de los anuncios personalizados y de la venta o el intercambio de datos en este navegador.',
+    optedIn: 'Los anuncios pueden ser personalizados en este navegador, salvo que te excluyas.',
+    gpcOn: 'Tu navegador envía Global Privacy Control, así que ya estás excluido.'
   } : {
     label: 'Cookie notice',
     title: 'Cookies & analytics',
-    body: 'We use Google Analytics to count visits only if you accept. Personalized ads are always off. You can change your choice any time with “Cookie settings” in the page footer.',
-    gpc: 'Your browser sends a Global Privacy Control (GPC) signal. We honor it as a Reject: analytics cookies stay off, and ads are never personalized.',
-    accept: 'Accept', reject: 'Reject', ok: 'OK', more: 'Learn more'
+    body: 'We use Google Analytics to count visits only if you accept. Ads are served by Google AdSense and may be personalized; you can opt out with “Do Not Sell or Share” in the page footer. Change your analytics choice any time with “Cookie settings”.',
+    gpc: 'Your browser sends a Global Privacy Control (GPC) signal. We honor it: analytics cookies stay off, and we ask Google not to personalize ads or use your data for advertising.',
+    accept: 'Accept', reject: 'Reject', ok: 'OK', more: 'Learn more',
+    optedOut: 'You are opted out of personalized ads and the sale or sharing of your data on this browser.',
+    optedIn: 'Ads on this browser may be personalized unless you opt out.',
+    gpcOn: 'Your browser sends Global Privacy Control, so you are already opted out.'
   };
 
   function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function save(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
   function update(granted) {
     if (typeof window.gtag !== 'function') return;
-    window.gtag('consent', 'update', {
-      analytics_storage: granted ? 'granted' : 'denied',
-      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    // Analytics only: ad_* signals belong to Google's consent / US state messages.
+    window.gtag('consent', 'update', { analytics_storage: granted ? 'granted' : 'denied' });
+  }
+  function analyticsGranted() { return !gpc && read() === 'granted'; }
+
+  // Ads opt-out ("Do Not Sell or Share") for this browser, on top of Google's own link.
+  var ADS_KEY = 'vcc-ads-optout';
+  function adsOptedOut() { try { return gpc || localStorage.getItem(ADS_KEY) === '1'; } catch (e) { return gpc; } }
+  function setAdsOptOut(on) {
+    try { if (on) localStorage.setItem(ADS_KEY, '1'); else localStorage.removeItem(ADS_KEY); } catch (e) {}
+    if (on && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      window.gtag('set', 'restricted_data_processing', true);
+    }
+    if (!on) { location.reload(); return; } // re-apply the regional defaults from <head>
+    (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+    renderAdsOptOut();
+  }
+  function renderAdsOptOut() {
+    var out = adsOptedOut();
+    document.querySelectorAll('[data-ads-optout-status]').forEach(function (el) {
+      el.textContent = gpc ? T.gpcOn : (out ? T.optedOut : T.optedIn);
     });
+    document.querySelectorAll('[data-ads-optout]').forEach(function (el) {
+      el.hidden = gpc;
+      el.setAttribute('aria-pressed', out ? 'true' : 'false');
+      var label = out ? el.getAttribute('data-label-on') : el.getAttribute('data-label-off');
+      if (label) el.textContent = label;
+    });
+  }
+
+  // Google's TCF consent message (Privacy & messaging) exposes __tcfapi.
+  // gdprApplies is Google's own region decision, so no IP lookup of ours is needed.
+  function whenTcf(cb) {
+    var waited = 0, done = false;
+    function finish(v) { if (!done) { done = true; cb(v); } }
+    (function poll() {
+      if (typeof window.__tcfapi === 'function') {
+        try {
+          window.__tcfapi('addEventListener', 2, function (tc, ok) {
+            if (!ok || !tc) return;
+            if (tc.gdprApplies && (tc.eventStatus === 'tcloaded' || tc.eventStatus === 'useractioncomplete')) {
+              // Google's message may update analytics_storage; our banner stays the authority for analytics.
+              update(analyticsGranted());
+            }
+            finish(tc.gdprApplies === true);
+          });
+        } catch (e) { finish(false); }
+        setTimeout(function () { finish(false); }, 3000);
+        return;
+      }
+      waited += 250;
+      if (waited >= 3000) finish(false); else setTimeout(poll, 250);
+    })();
   }
   function clearGaCookies() {
     var host = location.hostname, parts = host.split('.');
@@ -100,8 +162,18 @@
     document.querySelectorAll('[data-cookie-settings]').forEach(function (el) {
       el.addEventListener('click', function (e) { e.preventDefault(); open(el); });
     });
+    document.querySelectorAll('[data-ads-optout]').forEach(function (el) {
+      el.addEventListener('click', function (e) { e.preventDefault(); setAdsOptOut(!adsOptedOut()); });
+    });
+    renderAdsOptOut();
+    if (typeof window.gtag !== 'function') return;
     var stored = read();
-    if (!gpc && stored !== 'granted' && stored !== 'denied' && typeof window.gtag === 'function') open(null);
+    var ask = !gpc && stored !== 'granted' && stored !== 'denied';
+    // Let Google's EU/UK/CH consent message go alone; show our analytics banner everywhere else.
+    whenTcf(function (gdprApplies) {
+      var now = read();
+      if (ask && !gdprApplies && now !== 'granted' && now !== 'denied') open(null);
+    });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
