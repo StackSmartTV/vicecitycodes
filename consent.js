@@ -13,14 +13,14 @@
   var T = es ? {
     label: 'Aviso de cookies',
     title: 'Cookies y analítica',
-    body: 'Usamos Google Analytics para contar visitas solo si lo aceptas. Las cookies publicitarias personalizadas siempre están desactivadas. Puedes cambiar tu elección en cualquier momento con “Configuración de cookies” al pie de la página.',
-    gpc: 'Tu navegador envía la señal Global Privacy Control (GPC). La respetamos como un rechazo: la analítica y las cookies publicitarias están desactivadas.',
+    body: 'Usamos Google Analytics para contar visitas solo si lo aceptas. Los anuncios personalizados siempre están desactivados. Puedes cambiar tu elección en cualquier momento con “Configuración de cookies” al pie de la página.',
+    gpc: 'Tu navegador envía la señal Global Privacy Control (GPC). La respetamos como un rechazo: las cookies de analítica están desactivadas y los anuncios nunca son personalizados.',
     accept: 'Aceptar', reject: 'Rechazar', ok: 'Entendido', more: 'Más información'
   } : {
     label: 'Cookie notice',
     title: 'Cookies & analytics',
-    body: 'We use Google Analytics to count visits only if you accept. Personalized advertising cookies are always off. You can change your choice any time with “Cookie settings” in the page footer.',
-    gpc: 'Your browser sends a Global Privacy Control (GPC) signal. We honor it as a Reject: analytics and advertising cookies stay off.',
+    body: 'We use Google Analytics to count visits only if you accept. Personalized ads are always off. You can change your choice any time with “Cookie settings” in the page footer.',
+    gpc: 'Your browser sends a Global Privacy Control (GPC) signal. We honor it as a Reject: analytics cookies stay off, and ads are never personalized.',
     accept: 'Accept', reject: 'Reject', ok: 'OK', more: 'Learn more'
   };
 

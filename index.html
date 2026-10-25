@@ -232,6 +232,7 @@
     'ad_personalization': 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
+  (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
   (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
   gtag('config', 'G-RCMHE7MJPD', {

@@ -34,6 +34,7 @@
     'ad_personalization': 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
+  (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
   (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
   gtag('config', 'G-RCMHE7MJPD', {
@@ -148,7 +149,7 @@
         <ul>
           <li><strong>Accept:</strong> Google Analytics may set first-party cookies (such as <code>_ga</code>) to measure visits. Google signals and ad personalization stay turned off, and Google Analytics 4 does not log or store full IP addresses.</li>
           <li><strong>Reject:</strong> analytics cookies are not used, and any existing Google Analytics cookies for this Site are removed. Google may still receive limited, cookieless pings without identifiers, as described in Google&rsquo;s Consent Mode documentation.</li>
-          <li><strong>Advertising:</strong> regardless of your choice, ad storage and ad personalization stay denied on this Site, so Google AdSense is instructed not to use advertising cookies or your data for personalized ads. Ads you see are non-personalized or limited ads.</li>
+          <li><strong>Advertising:</strong> regardless of your choice, ad storage and ad personalization stay denied in Google Consent Mode, and Google AdSense on this Site is set to show <strong>non-personalized ads only</strong>. Non-personalized ads are based on context (such as the page you are reading and your general location), not on your browsing history. Google may still use cookies or similar technologies for frequency capping, aggregated ad reporting, and to combat fraud and abuse, as described in the AdSense section below.</li>
           <li><strong>Global Privacy Control:</strong> if your browser sends a Global Privacy Control (GPC) signal, we treat it as a Reject automatically and do not show the banner.</li>
         </ul>
         <p>Your choice is saved in your browser&rsquo;s local storage (key <code>vcc-consent</code>) so we don&rsquo;t ask again on every page. To change it, click <strong>Cookie settings</strong> in the footer of any page, or clear this Site&rsquo;s data in your browser.</p>

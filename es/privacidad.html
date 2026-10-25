@@ -34,6 +34,7 @@
     'ad_personalization': 'denied'
   });
   gtag('set', 'ads_data_redaction', true);
+  (window.adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
   (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
   gtag('config', 'G-RCMHE7MJPD', {
@@ -133,7 +134,7 @@
         <ul>
           <li><strong>Aceptar:</strong> Google Analytics puede colocar cookies propias (como <code>_ga</code>) para medir visitas. Las señales de Google y la personalización de anuncios siguen desactivadas, y Google Analytics 4 no registra ni guarda direcciones IP completas.</li>
           <li><strong>Rechazar:</strong> no se usan cookies de analítica y se eliminan las cookies de Google Analytics existentes de este Sitio. Google puede seguir recibiendo señales limitadas sin cookies ni identificadores, según la documentación del Modo de consentimiento de Google.</li>
-          <li><strong>Publicidad:</strong> sin importar tu elección, el almacenamiento publicitario y la personalización de anuncios siguen denegados en este Sitio, por lo que Google AdSense recibe la indicación de no usar cookies publicitarias ni tus datos para anuncios personalizados. Los anuncios que ves son no personalizados o limitados.</li>
+          <li><strong>Publicidad:</strong> sin importar tu elección, el almacenamiento publicitario y la personalización de anuncios siguen denegados en el Modo de consentimiento de Google, y Google AdSense en este Sitio está configurado para mostrar <strong>solo anuncios no personalizados</strong>. Estos anuncios se basan en el contexto (como la página que lees y tu ubicación general), no en tu historial de navegación. Google puede seguir usando cookies o tecnologías similares para limitar la frecuencia, generar informes publicitarios agregados y combatir el fraude y el abuso, como se describe en la sección de AdSense.</li>
           <li><strong>Global Privacy Control:</strong> si tu navegador envía la señal Global Privacy Control (GPC), la tratamos automáticamente como un rechazo y no mostramos el aviso.</li>
         </ul>
         <p>Tu elección se guarda en el almacenamiento local de tu navegador (clave <code>vcc-consent</code>) para no preguntarte en cada página. Para cambiarla, haz clic en <strong>Configuración de cookies</strong> al pie de cualquier página, o borra los datos de este Sitio en tu navegador.</p></div>

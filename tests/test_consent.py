@@ -27,6 +27,8 @@ class ConsentTest(unittest.TestCase):
             self.assertGreater(text.find("adsbygoogle.js"), default, path)
             self.assertIn("'allow_google_signals': false", text, path)
             self.assertIn("'allow_ad_personalization_signals': false", text, path)
+            npa = text.find("requestNonPersonalizedAds = 1")
+            self.assertTrue(-1 < npa < text.find("adsbygoogle.js"), path)
 
     def test_every_page_has_cookie_settings_and_banner(self) -> None:
         for path in PAGES:
