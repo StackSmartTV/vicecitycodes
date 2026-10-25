@@ -132,4 +132,10 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://vicecodeshub.com/es/creadores.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/creators.html"/>
   </url>
+  <url>
+    <loc>https://vicecodeshub.com/accessibility.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
