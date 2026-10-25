@@ -398,3 +398,11 @@ section.vh-hero { position:relative; margin:0; overflow:hidden; isolation:isolat
   .cr-spot .cr-body { padding:1.6rem 1.8rem; }
 }
 /* /vch-creators */
+
+footer .fan-disclaimer {
+  max-width: 42rem;
+  margin: 0.9rem auto 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
