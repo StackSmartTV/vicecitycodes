@@ -435,3 +435,36 @@ footer .fan-disclaimer {
 }
 .cc-link:hover { color: var(--neon-pink); text-shadow: 0 0 8px var(--neon-pink); }
 /* /vch-consent */
+
+/* vch-posts v1: articles, Read next cards, homepage Latest news */
+.post{max-width:720px;margin:0 auto}
+.crumbs{font-size:.85rem;color:var(--muted);margin-bottom:.6rem}
+.crumbs a{color:var(--neon-cyan)}
+.post-meta{font-size:.85rem;color:var(--muted);margin-bottom:.4rem}
+.post-tag{display:inline-block;padding:.1rem .55rem;border-radius:999px;background:linear-gradient(90deg,var(--neon-pink),var(--neon-purple));color:#fff;font-weight:700;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase}
+.post-title{font-size:clamp(1.6rem,4.5vw,2.4rem);line-height:1.15;margin:.2rem 0 .6rem;text-align:left}
+.post-dek{font-size:1.1rem;color:var(--muted);margin-bottom:1.4rem;line-height:1.5}
+.post-body{font-size:1.05rem;line-height:1.75}
+.post-body p,.post-body ul{margin:0 0 1.1rem}
+.post-body ul{padding-left:1.2rem}
+.post-body li{margin-bottom:.45rem}
+.post-body h3{font-size:1.3rem;margin:1.8rem 0 .6rem;color:var(--neon-pink)}
+.post-body a,.post-sources a{color:var(--neon-cyan);text-decoration:underline;text-underline-offset:2px}
+.post-sources{margin-top:2rem;padding:1rem 1.2rem;border-left:3px solid var(--neon-cyan);background:var(--card);border-radius:8px;font-size:.92rem}
+.post-sources ol{padding-left:1.2rem;margin:.5rem 0}
+.post-sources li{margin-bottom:.35rem}
+.post-note{color:var(--muted);font-size:.85rem}
+.read-next,.news-home{max-width:1050px;margin:2.5rem auto 1rem}
+.read-next h2,.news-home h2{margin-bottom:1rem}
+.rn-grid{list-style:none;padding:0;margin:0;display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:700px){.rn-grid{grid-template-columns:repeat(3,1fr)}.rn-grid--home{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}}
+.rn-card{display:flex;flex-direction:column;gap:.35rem;height:100%;padding:1rem 1.1rem;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,.08);color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s}
+.rn-card:hover,.rn-card:focus-visible{border-color:var(--neon-pink);transform:translateY(-2px)}
+.rn-card:focus-visible{outline:2px solid var(--neon-cyan);outline-offset:2px}
+.rn-kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--neon-cyan);font-weight:700}
+.rn-title{font-weight:800;font-size:1.05rem;line-height:1.3}
+.rn-desc{font-size:.9rem;color:var(--muted);line-height:1.45}
+.rn-yt{margin-top:1rem;text-align:center}
+.rn-yt a{color:var(--neon-pink);font-weight:700}
+@media(prefers-reduced-motion:reduce){.rn-card{transition:none}.rn-card:hover{transform:none}}
+/* /vch-posts */
