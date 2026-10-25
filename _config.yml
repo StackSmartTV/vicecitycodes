@@ -1,0 +1,12 @@
+# GitHub Pages builds this repo with Jekyll from the main branch root.
+# Keep the generator and tests out of the public site. The feed JSON stays.
+exclude:
+  - sitegen
+  - tests
+  - Makefile
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
