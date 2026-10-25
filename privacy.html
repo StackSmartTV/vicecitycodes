@@ -23,14 +23,25 @@
   <meta name="twitter:image" content="https://vicecodeshub.com/vice-city-skyline.jpg">
   <link rel="preload" href="anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCMHE7MJPD"></script>
+<!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor accepts -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('set', 'ads_data_redaction', true);
+  (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
-  gtag('config', 'G-RCMHE7MJPD');
+  gtag('config', 'G-RCMHE7MJPD', {
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false
+  });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCMHE7MJPD"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4487667124440052"
      crossorigin="anonymous"></script>
 </head>
@@ -108,7 +119,7 @@
   <div class="container">
     <section class="legal">
       <h2>Privacy Policy</h2>
-      <p class="updated">Effective date: October 20, 2026</p>
+      <p class="updated">Effective date: October 25, 2026</p>
 
       <div class="card">
         <p>This Privacy Policy explains how Vice City Codes (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) handles information when you visit <strong>vicecodeshub.com</strong> (the &ldquo;Site&rdquo;). By using the Site, you agree to the practices described here.</p>
@@ -127,8 +138,25 @@
 
       <div class="card">
         <h3>Cookies</h3>
-        <p>Cookies are small text files stored on your device by your browser. The Site uses Google Analytics cookies to measure traffic, and third parties we work with, including advertising partners, may place and read cookies or use similar technologies (such as web beacons and device identifiers) when you visit.</p>
+        <p>Cookies are small text files stored on your device by your browser. If you accept analytics cookies, the Site uses Google Analytics cookies to measure traffic (see Cookies &amp; Analytics below), and third parties we work with, including advertising partners, may place and read cookies or use similar technologies (such as web beacons and device identifiers) when you visit.</p>
         <p>You can block or delete cookies in your browser settings. Some features or ads may not work as intended if cookies are disabled.</p>
+      </div>
+
+      <div class="card" id="cookies">
+        <h3>Cookies &amp; Analytics (Your Choice)</h3>
+        <p>The Site uses <strong>Google Analytics 4</strong> (Google LLC) to count visits and see which pages are popular. Analytics cookies are <strong>off by default</strong>. We use Google Consent Mode, so until you choose, Google is told that analytics storage, ad storage, ad user data, and ad personalization are all denied, and Google Analytics does not set or read its cookies on your device.</p>
+        <ul>
+          <li><strong>Accept:</strong> Google Analytics may set first-party cookies (such as <code>_ga</code>) to measure visits. Google signals and ad personalization stay turned off, and Google Analytics 4 does not log or store full IP addresses.</li>
+          <li><strong>Reject:</strong> analytics cookies are not used, and any existing Google Analytics cookies for this Site are removed. Google may still receive limited, cookieless pings without identifiers, as described in Google&rsquo;s Consent Mode documentation.</li>
+          <li><strong>Advertising:</strong> regardless of your choice, ad storage and ad personalization stay denied on this Site, so Google AdSense is instructed not to use advertising cookies or your data for personalized ads. Ads you see are non-personalized or limited ads.</li>
+          <li><strong>Global Privacy Control:</strong> if your browser sends a Global Privacy Control (GPC) signal, we treat it as a Reject automatically and do not show the banner.</li>
+        </ul>
+        <p>Your choice is saved in your browser&rsquo;s local storage (key <code>vcc-consent</code>) so we don&rsquo;t ask again on every page. To change it, click <strong>Cookie settings</strong> in the footer of any page, or clear this Site&rsquo;s data in your browser.</p>
+      </div>
+
+      <div class="card" id="do-not-sell">
+        <h3>Do Not Sell or Share My Personal Information</h3>
+        <p>We do not sell personal information, and we do not share it for cross-context behavioral advertising. Personalized advertising is turned off on this Site, and we honor Global Privacy Control signals as an opt-out. If you live in California or another U.S. state with a privacy law, you can also opt out by clicking <strong>Reject</strong> in Cookie settings, or ask to know, correct, or delete information by emailing <a href="mailto:mdecoded303@gmail.com">mdecoded303@gmail.com</a>. Visitors in the European Economic Area and the United Kingdom may also have rights to access, delete, or object to processing, and to withdraw consent at any time through Cookie settings. We will not treat you differently for using these rights.</p>
       </div>
 
       <div class="card">
@@ -199,6 +227,8 @@
       <a href="vice-codes-hub/privacy.html">Vice Codes Hub Privacy</a> &bull;
       <a href="es/" lang="es" hreflang="es">Español</a>
     </p>
+    <p class="cc-footer" style="margin-top:0.5rem;"><button type="button" class="cc-link" data-cookie-settings>Cookie settings</button> &bull; <a href="privacy.html#do-not-sell">Do Not Sell or Share My Personal Information</a></p>
   </footer>
+<script src="consent.js" defer></script>
 </body>
 </html>

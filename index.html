@@ -221,14 +221,25 @@
   </style>
   <link rel="preload" href="anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCMHE7MJPD"></script>
+<!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor accepts -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('set', 'ads_data_redaction', true);
+  (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
-  gtag('config', 'G-RCMHE7MJPD');
+  gtag('config', 'G-RCMHE7MJPD', {
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false
+  });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCMHE7MJPD"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4487667124440052"
      crossorigin="anonymous"></script>
 </head>
@@ -454,6 +465,7 @@
       <a href="es/" lang="es" hreflang="es" style="color:var(--neon-cyan);">Español</a>
     </p>
     <p style="margin-top:0.5rem; font-size:0.85rem;">Countdown targets midnight Eastern on November 19, 2026.</p>
+    <p class="cc-footer" style="margin-top:0.5rem;"><button type="button" class="cc-link" data-cookie-settings>Cookie settings</button> &bull; <a href="privacy.html#do-not-sell">Do Not Sell or Share My Personal Information</a></p>
   </footer>
 
   <script>
@@ -473,5 +485,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
+<script src="consent.js" defer></script>
 </body>
 </html>

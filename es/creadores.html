@@ -23,14 +23,25 @@
   <meta name="twitter:image" content="https://vicecodeshub.com/vice-city-skyline.jpg">
   <link rel="preload" href="../anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../style.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCMHE7MJPD"></script>
+<!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor accepts -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('set', 'ads_data_redaction', true);
+  (function(){try{if(navigator.globalPrivacyControl!==true&&localStorage.getItem('vcc-consent')==='granted'){gtag('consent','update',{'analytics_storage':'granted'});}}catch(e){}})();
   gtag('js', new Date());
-  gtag('config', 'G-RCMHE7MJPD');
+  gtag('config', 'G-RCMHE7MJPD', {
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false
+  });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RCMHE7MJPD"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4487667124440052"
      crossorigin="anonymous"></script>
 </head>
@@ -154,6 +165,8 @@
       <a href="../super-squad-dash/" lang="en" hreflang="en">Super Squad Dash</a> &bull;
       <a href="../" lang="en" hreflang="en">English</a>
     </p>
+    <p class="cc-footer" style="margin-top:0.5rem;"><button type="button" class="cc-link" data-cookie-settings>Configuración de cookies</button> &bull; <a href="../es/privacidad.html#no-vender">No vender ni compartir mi información personal</a></p>
   </footer>
+<script src="../consent.js" defer></script>
 </body>
 </html>
