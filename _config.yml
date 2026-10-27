@@ -1,5 +1,13 @@
 # GitHub Pages builds this repo with Jekyll from the main branch root.
 # Keep the generator and tests out of the public site. The feed JSON stays.
+# These root files are copied as plain text (no front matter) so the custom
+# domain serves them at https://vicecodeshub.com/app-ads.txt and the other paths.
+# include forces them into the build even if an exclude or dotfile rule matches.
+include:
+  - app-ads.txt
+  - ads.txt
+  - CNAME
+  - robots.txt
 exclude:
   - sitegen
   - tests
