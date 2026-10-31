@@ -467,6 +467,20 @@ footer .fan-disclaimer {
 .rn-yt{margin-top:1rem;text-align:center}
 .rn-yt a{color:var(--neon-pink);font-weight:700}
 @media(prefers-reduced-motion:reduce){.rn-card{transition:none}.rn-card:hover{transform:none}}
+/* 2026-10-31: 'In this article' contents + reading progress bar */
+.read-progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:1000;pointer-events:none;background:transparent}
+.read-progress span{display:block;height:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--neon-pink),var(--neon-purple),var(--neon-cyan));box-shadow:0 0 8px var(--neon-pink)}
+.post-toc{margin:0 0 1.6rem;padding:.8rem 1.1rem;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--neon-pink)}
+.post-toc summary{cursor:pointer;font-weight:800;font-size:1rem;min-height:44px;display:flex;align-items:center;gap:.4rem;list-style-position:inside}
+.post-toc summary:focus-visible{outline:2px solid var(--neon-cyan);outline-offset:2px;border-radius:4px}
+.toc-count{font-weight:400;font-size:.85rem;color:var(--muted)}
+.post-toc ol{margin:.3rem 0 .2rem;padding-left:1.3rem;font-size:.95rem;line-height:1.5}
+.post-toc li{margin:0;padding:.3rem 0}
+.post-toc a{display:inline;padding:.15rem 0;color:var(--text);text-decoration:none;border-bottom:1px solid transparent}
+.post-toc a:hover,.post-toc a:focus-visible{color:var(--neon-cyan);border-bottom-color:var(--neon-cyan)}
+.post-toc a[aria-current]{color:var(--neon-cyan);font-weight:700}
+.post-body h3[id],.post-sources h3{scroll-margin-top:84px}
+@media(prefers-reduced-motion:no-preference){html:has(.post-toc){scroll-behavior:smooth}}
 /* /vch-posts */
 
 /* vch-fitcheck v1: 'Will GTA 6 fit?' storage checker */
