@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vice City Codes//GTA 6 calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gta6-score@vicecodeshub.com
+DTSTAMP:20261101T160000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:GTA 6: Justice score album
+DESCRIPTION:Grand Theft Auto VI: Original Score on streaming\, CD and vinyl. Source: https://www.rockstargames.com/newswire/article/39ak8a12395591/grand-theft-auto-vi-original-score-by-justice | More at https://vicecodeshub.com/
+URL:https://vicecodeshub.com/
+END:VEVENT
+END:VCALENDAR

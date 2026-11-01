@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vice City Codes//GTA 6 calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gta6-tt-earnings@vicecodeshub.com
+DTSTAMP:20261101T160000Z
+DTSTART:20261109T213000Z
+DTEND:20261109T223000Z
+SUMMARY:GTA 6: Take-Two earnings call
+DESCRIPTION:4:30 PM ET. First official word from Take-Two since review copies reportedly went out. Source: https://taketwointeractivesoftwareinc.gcs-web.com/events/event-details/q2-2027-take-two-interactive-software-inc-earnings-conference-call/ | More at https://vicecodeshub.com/
+URL:https://vicecodeshub.com/
+END:VEVENT
+END:VCALENDAR
