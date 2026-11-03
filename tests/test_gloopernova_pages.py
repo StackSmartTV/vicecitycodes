@@ -33,6 +33,16 @@ class GloopernovaPagesTest(unittest.TestCase):
         ):
             self.assertIn(needle, text, needle)
 
+    def test_privacy_names_unity_iap_and_unity_ads(self) -> None:
+        text = (DIR / "privacy.html").read_text(encoding="utf-8")
+        sec4 = text[text.index("4. In-App Purchases"):text.index("5. Advertising")]
+        for needle in ("Unity In-App Purchasing", "Unity Technologies", "installation ID", "IDFV",
+                       "only if you allowed tracking", "not use this purchase data for tracking"):
+            self.assertIn(needle, sec4, needle)
+        self.assertIn("The Game uses Unity Ads through LevelPlay.", text)
+        self.assertNotIn("may include <strong>Unity Ads", text)
+        self.assertIn("Last updated: November 3, 2026", text)
+
     def test_terms_cover_required_topics(self) -> None:
         text = (DIR / "terms.html").read_text(encoding="utf-8")
         for needle in (
