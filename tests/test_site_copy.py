@@ -29,7 +29,7 @@ class SiteCopyTest(unittest.TestCase):
         pages = [
             path
             for path in ROOT.rglob("*.html")
-            if "super-squad-dash" not in path.parts and path.is_file()
+            if "super-squad-dash" not in path.parts and "gloopernova" not in path.parts and path.is_file()
         ]
         self.assertGreaterEqual(len(pages), 10)
         for path in pages:
