@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-20T00:00:00Z",
+  "updatedAt": "2026-11-03T00:00:00Z",
   "games": [
     {
       "id": "gta5",
@@ -1303,6 +1303,13 @@
   ],
   "news": [
     {
+      "id": "gta6-preload-november-10",
+      "title": "Pre-load moves up to November 10; up to 212 GB",
+      "date": "2026-11-03",
+      "summary": "Rockstar's Newswire says digital pre-loading starts November 10, 2026: at midnight local time on PlayStation 5 and at 12 a.m. GMT worldwide on Xbox Series X|S. Code-in-box copies arrive at retailers from November 12. The pre-load file needs up to 212 GB depending on the console. Launch is still November 19, 2026.",
+      "url": "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10"
+    },
+    {
       "id": "gta5-cheats-last-checked",
       "title": "GTA 5 cheat list checked; no GTA 6 codes yet",
       "date": "2026-10-20",
@@ -1311,9 +1318,9 @@
     },
     {
       "id": "gta6-preorder-preload",
-      "title": "Pre-orders, pricing, and November 12 pre-load",
+      "title": "Pre-orders and pricing announced",
       "date": "2026-06-24",
-      "summary": "Take-Two announced Grand Theft Auto VI pre-orders for a November 19, 2026 launch on PlayStation 5 and Xbox Series X|S. Standard Edition is $79.99 and Ultimate Edition is $99.99. Digital pre-orders can pre-load starting November 12, 2026. Physical copies include a download code and go on sale that same day.",
+      "summary": "Take-Two announced Grand Theft Auto VI pre-orders for a November 19, 2026 launch on PlayStation 5 and Xbox Series X|S. Standard Edition is $79.99 and Ultimate Edition is $99.99. Digital pre-orders can pre-load starting November 12, 2026. Physical copies include a download code and go on sale that same day. Update: on November 3, 2026, Rockstar moved digital pre-loading up to November 10; boxed copies still arrive November 12.",
       "url": "https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/news-release-details/rockstar-games-announces-pre-orders-grand-theft-auto-vi"
     },
     {
@@ -1326,15 +1333,15 @@
   ],
   "checklist": [
     {
-      "id": "pre-load-opens-november-12",
-      "title": "Pre-load opens November 12",
-      "detail": "Digital pre-orders can begin pre-loading on November 12, 2026, before the November 19, 2026 launch. Source: https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/news-release-details/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
+      "id": "pre-load-opens-november-10",
+      "title": "Pre-load opens November 10",
+      "detail": "Digital pre-orders can begin pre-loading on November 10, 2026 (midnight local time on PS5, 12 a.m. GMT on Xbox Series X|S), before the November 19, 2026 launch. Source: https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
       "group": "launch-prep"
     },
     {
       "id": "update-your-console-and-clear-space",
       "title": "Update your console & clear space",
-      "detail": "Update the console and free storage before the download. This site does not publish an install size.",
+      "detail": "Update the console and free storage before the download. Rockstar says the pre-load file needs up to 212 GB depending on the console. Source: https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
       "group": "launch-prep"
     },
     {
@@ -1346,7 +1353,7 @@
     {
       "id": "expect-a-big-open-world-download",
       "title": "Expect a big open-world download",
-      "detail": "Expect a large open-world download. Physical copies include a download code and are available starting November 12, 2026 to support pre-loading. Source: https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/news-release-details/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
+      "detail": "Expect a large open-world download. Physical copies include a download code and are available from retailers starting November 12, 2026 to support pre-loading. Source: https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
       "group": "launch-prep"
     }
   ]

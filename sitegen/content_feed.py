@@ -32,6 +32,11 @@ TAKE_TWO_PREORDER_URL = (
     "news-release-details/rockstar-games-announces-pre-orders-grand-theft-auto-vi"
 )
 
+ROCKSTAR_PRELOAD_URL = (
+    "https://www.rockstargames.com/newswire/article/k4ak9okk485712/"
+    "grand-theft-auto-vi-pre-load-begins-on-november-10"
+)
+
 BUTTON_TOKENS = {
     "UP",
     "DOWN",
@@ -379,12 +384,17 @@ def _checklist_detail(title: str, index_html: str) -> str | None:
     low = title.lower()
     if "pre-load" in low or "preload" in low:
         return (
-            "Digital pre-orders can begin pre-loading on November 12, 2026, "
+            "Digital pre-orders can begin pre-loading on November 10, 2026 "
+            "(midnight local time on PS5, 12 a.m. GMT on Xbox Series X|S), "
             "before the November 19, 2026 launch. "
-            f"Source: {TAKE_TWO_PREORDER_URL}"
+            f"Source: {ROCKSTAR_PRELOAD_URL}"
         )
     if "clear space" in low or "storage" in low:
-        return "Update the console and free storage before the download. This site does not publish an install size."
+        return (
+            "Update the console and free storage before the download. "
+            "Rockstar says the pre-load file needs up to 212 GB depending on the console. "
+            f"Source: {ROCKSTAR_PRELOAD_URL}"
+        )
     if "edition" in low:
         _require("~$79.99" in index_html and "~$99.99" in index_html, "homepage is missing edition prices")
         return (
@@ -395,8 +405,8 @@ def _checklist_detail(title: str, index_html: str) -> str | None:
     if "download" in low:
         return (
             "Expect a large open-world download. Physical copies include a download code "
-            "and are available starting November 12, 2026 to support pre-loading. "
-            f"Source: {TAKE_TWO_PREORDER_URL}"
+            "and are available from retailers starting November 12, 2026 to support pre-loading. "
+            f"Source: {ROCKSTAR_PRELOAD_URL}"
         )
     return None
 

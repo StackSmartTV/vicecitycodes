@@ -79,13 +79,17 @@ class ContentFeedTest(unittest.TestCase):
         for item in feed["news"]:
             self.assertTrue(item["url"].startswith("https://"))
         titles = [item["title"].lower() for item in feed["checklist"]]
-        self.assertTrue(any("november 12" in title for title in titles))
+        self.assertTrue(any("november 10" in title for title in titles))
         self.assertTrue(any("clear space" in title for title in titles))
         self.assertTrue(any("edition" in title for title in titles))
         self.assertTrue(all(item["group"] == "launch-prep" for item in feed["checklist"]))
-        preload = next(item for item in feed["checklist"] if "november 12" in item["title"].lower())
-        self.assertIn("taketwointeractivesoftwareinc.gcs-web.com", preload["detail"])
-        self.assertNotIn("GB", " ".join(item["detail"] or "" for item in feed["checklist"]))
+        preload = next(item for item in feed["checklist"] if "november 10" in item["title"].lower())
+        self.assertIn("rockstargames.com/newswire", preload["detail"])
+        # Install size is only stated alongside Rockstar's official source (Newswire, Nov 3, 2026).
+        for item in feed["checklist"]:
+            if "GB" in (item["detail"] or ""):
+                self.assertIn("up to 212 GB", item["detail"])
+                self.assertIn("rockstargames.com/newswire", item["detail"])
 
     def test_validator_rejects_invented_gta6_cheat_and_bad_token(self) -> None:
         feed = build_feed()
