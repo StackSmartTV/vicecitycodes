@@ -1,4 +1,5 @@
-/* vch-shorts v1: click-to-load YouTube Shorts (nothing loads from YouTube before a click) */
+/* vch-shorts v1: click-to-load YouTube Shorts from the current channel only.
+   Channel URL and label live in sitegen/youtube.py. Nothing loads before a click. */
 (function(){
   document.addEventListener('click',function(ev){
     var a=ev.target.closest&&ev.target.closest('a.vsh-play');

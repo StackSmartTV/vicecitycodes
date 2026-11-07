@@ -210,6 +210,7 @@
     .short-embed { position:relative; width:100%; aspect-ratio:9 / 16; border-radius:16px; overflow:hidden; background:#000; border:1px solid #3a1a55; box-shadow:0 0 25px rgba(255,45,149,0.3); }
     .short-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
     .yt-cta { text-align:center; }
+    .yt-cta .yt-btn + .yt-btn { margin-left: 0.55rem; }
     .yt-handle { color:var(--neon-cyan); font-weight:700; margin-bottom:0.5rem; }
     .tight li { margin:0.35rem 0 0.35rem 1.2rem; }
     .note { margin-top:0.9rem; padding:0.8rem 1rem; border-left:3px solid var(--sunset); background:rgba(255,107,53,0.08); border-radius:8px; }
@@ -282,8 +283,8 @@ nav.vh-nav { position:static; display:flex; align-items:center; gap:1rem; margin
 nav.vh-nav .vh-links a { display:block; margin:0; padding:.5rem .8rem; border-radius:999px; color:var(--text); text-decoration:none; font:600 .9rem/1.2 system-ui,-apple-system,'Segoe UI',sans-serif; letter-spacing:.02em; text-transform:none; transition:background-color .2s, color .2s; }
 nav.vh-nav .vh-links a:hover { color:#fff; background:rgba(184,77,255,.18); text-shadow:none; }
 nav.vh-nav .vh-links a[aria-current="page"] { color:#fff; background:linear-gradient(90deg,rgba(255,45,149,.28),rgba(0,240,255,.18)); box-shadow:inset 0 0 0 1px rgba(255,45,149,.55); }
-.vh-actions { display:flex; align-items:center; gap:.75rem; }
-nav.vh-nav a.vh-yt { display:inline-flex; align-items:center; gap:.4rem; margin:0; padding:.45rem .85rem; border-radius:999px; background:#ff0033; color:#fff; text-decoration:none; font:700 .85rem/1 system-ui,sans-serif; text-transform:none; letter-spacing:0; }
+.vh-actions { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; }
+nav.vh-nav a.vh-yt { display:inline-flex; align-items:center; gap:.4rem; margin:0; padding:.45rem .85rem; border-radius:999px; background:#ff0033; color:#fff; text-decoration:none; font:700 .85rem/1 system-ui,sans-serif; text-transform:none; letter-spacing:0; white-space:nowrap; }
 nav.vh-nav a.vh-yt:hover { background:#e6002e; text-shadow:none; }
 .vh-lang { display:inline-flex; border:1px solid rgba(201,179,230,.45); border-radius:999px; padding:2px; }
 nav.vh-nav .vh-lang a { display:inline-block; margin:0; padding:.3rem .6rem; border-radius:999px; color:var(--muted); text-decoration:none; font:700 .75rem/1 system-ui,sans-serif; letter-spacing:.06em; text-transform:none; }
@@ -347,12 +348,16 @@ section.vh-hero { position:relative; margin:0; overflow:hidden; isolation:isolat
   .vh-js .vh-open nav.vh-nav { display:flex; }
   .vh-js .vh-links { flex-direction:column; gap:.15rem; }
   .vh-js nav.vh-nav .vh-links a { padding:.8rem .9rem; font-size:1rem; border-radius:12px; }
-  .vh-js .vh-actions { justify-content:space-between; }
+  .vh-js .vh-actions { justify-content:flex-start; flex-wrap:wrap; }
   html:not(.vh-js) .vh-inner { height:auto; flex-wrap:wrap; padding:.5rem 1rem; }
   html:not(.vh-js) nav.vh-nav { width:100%; flex-wrap:wrap; margin:0; }
   html:not(.vh-js) .vh-links { flex-wrap:wrap; }
   .vh-word { font-size:1.2rem; }
   .ad-wrap.ad-top { min-height:116px; }
+}
+@media (min-width: 1080px) {
+  header.vh-bar .vh-inner { height:auto; min-height:60px; padding-top:.4rem; padding-bottom:.4rem; }
+  header.vh-bar nav.vh-nav { flex-wrap:wrap; justify-content:flex-end; row-gap:.45rem; max-width:calc(100% - 16.5rem); }
 }
 @media (min-width: 900px) {
   .vh-hero-inner { grid-template-columns:minmax(0,1.25fr) minmax(300px,.85fr); align-items:center; padding:2.6rem 1.25rem 2.8rem; gap:2.5rem; }
@@ -525,7 +530,7 @@ footer .fan-disclaimer {
 .vtl-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 /* /vch-timeline */
 
-/* vch-shorts v1: click-to-load GTA 6 Hub Shorts */
+/* vch-shorts v1: click-to-load YouTube Shorts */
 .vsh{margin:1.2rem 0}
 .vsh--post{margin:2rem 0 1rem;padding:1rem;border:1px solid rgba(255,46,151,.3);border-radius:14px;background:rgba(13,0,21,.55)}
 .vsh--post h2{font-size:1.35rem;margin:0 0 .8rem}
