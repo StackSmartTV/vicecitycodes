@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-03T00:00:00Z",
+  "updatedAt": "2026-11-09T00:00:00Z",
   "games": [
     {
       "id": "gta5",
@@ -1302,6 +1302,20 @@
     }
   ],
   "news": [
+    {
+      "id": "gta6-take-two-q2-fy2027-call",
+      "title": "Take-Two Q2 FY2027 earnings call set for November 9",
+      "date": "2026-11-09",
+      "summary": "Take-Two Interactive reports second-quarter fiscal 2027 results on Monday, November 9, 2026, with a conference call at 4:30 PM Eastern. The quarter ended September 30, so results will not include post-launch Grand Theft Auto VI sales. It is the last scheduled investor call before the November 19 launch.",
+      "url": "https://taketwointeractivesoftwareinc.gcs-web.com/events/event-details/q2-2027-take-two-interactive-software-inc-earnings-conference-call/"
+    },
+    {
+      "id": "gta6-launch-gallery-november-5",
+      "title": "Rockstar opens The Launch Gallery with new GTA VI screenshots",
+      "date": "2026-11-05",
+      "summary": "On November 5, 2026, Rockstar opened The Launch Gallery on the official Grand Theft Auto VI site with a collection of new marketing screenshots of Vice City, Jason, Lucia, Grassrivers, the Leonida Keys and Port Gellhorn. Launch remains November 19, 2026. This is imagery, not a systems update.",
+      "url": "https://www.rockstargames.com/VI/launch-gallery"
+    },
     {
       "id": "gta6-preload-november-10",
       "title": "Pre-load moves up to November 10; up to 212 GB",
