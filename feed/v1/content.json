@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T00:00:00Z",
+  "updatedAt": "2026-11-10T00:00:00Z",
   "games": [
     {
       "id": "gta5",
@@ -1302,6 +1302,20 @@
     }
   ],
   "news": [
+    {
+      "id": "gta6-preload-live-november-10",
+      "title": "Pre-load is live on PS5 and Xbox",
+      "date": "2026-11-10",
+      "summary": "Rockstar's Newswire says pre-loading is now available for everyone who pre-ordered Grand Theft Auto VI digitally; code-in-box buyers can redeem their code and pre-load as soon as they have it. The download needs up to 212 GB. The game unlocks November 19, 2026.",
+      "url": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+    },
+    {
+      "id": "gta6-the-festival-november-21",
+      "title": "Grand Theft Auto VI: The Festival in Miami on November 21",
+      "date": "2026-11-09",
+      "summary": "Rockstar and PlayStation announced Grand Theft Auto VI: The Festival on Saturday, November 21, 2026 at Mana Wynwood in Miami, with two stages of artists from the game and its soundtrack. Tickets are sold to lottery winners; the event is 17+.",
+      "url": "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival"
+    },
     {
       "id": "gta6-take-two-q2-fy2027-call",
       "title": "Take-Two Q2 FY2027 earnings call set for November 9",

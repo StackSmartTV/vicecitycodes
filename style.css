@@ -565,3 +565,19 @@ footer .fan-disclaimer {
 .vshare-toast[hidden]{display:none}
 @media(prefers-reduced-motion:reduce){.vshare-btn{transition:none}.vshare-btn:hover{transform:none}}
 /* /vch-share */
+
+/* vch-upnext v1: 'Up next' card on posts */
+.vun{position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom));z-index:40;width:min(92vw,420px);display:grid;grid-template-columns:1fr auto;align-items:center;gap:.1rem .6rem;padding:.7rem .8rem .75rem 1rem;border:1px solid rgba(255,46,151,.55);border-radius:14px;background:rgba(13,0,21,.94);box-shadow:0 8px 28px rgba(0,0,0,.55),0 0 18px rgba(255,46,151,.25);transform:translate(-50%,140%);opacity:0;transition:transform .35s ease,opacity .35s ease;pointer-events:none}
+.vun[hidden]{display:none}
+.vun.vun-on{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.vun-k{grid-column:1;margin:0;font:700 .72rem/1.2 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#00f0ff}
+.vun-link{grid-column:1;display:flex;flex-direction:column;gap:.2rem;color:#fff;text-decoration:none;min-height:44px;justify-content:center}
+.vun-t{font:600 .95rem/1.3 system-ui,sans-serif;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vun-go{font:700 .82rem/1 system-ui,sans-serif;color:#ff2e97}
+.vun-link:hover .vun-t,.vun-link:focus-visible .vun-t{text-decoration:underline}
+.vun-link:focus-visible,.vun-x:focus-visible{outline:2px solid #00f0ff;outline-offset:3px;border-radius:8px}
+.vun-x{grid-column:2;grid-row:1/span 2;width:44px;height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+.vun-x:hover{background:rgba(255,255,255,.16)}
+@media (min-width:900px){.vun{left:auto;right:20px;transform:translate(0,140%)}.vun.vun-on{transform:translate(0,0)}}
+@media (prefers-reduced-motion:reduce){.vun{transition:none}}
+/* /vch-upnext */

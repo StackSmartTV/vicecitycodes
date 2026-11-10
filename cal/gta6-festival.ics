@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vice City Codes//GTA 6 calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gta6-festival@vicecodeshub.com
+DTSTAMP:20261101T160000Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:GTA 6: Grand Theft Auto VI: The Festival
+DESCRIPTION:Mana Wynwood\, Miami. Two stages\, 17+\, doors 4 PM (DICE). Tickets via lottery winners on DICE from Nov 11\, 12 PM ET. Source: https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival | More at https://vicecodeshub.com/
+URL:https://vicecodeshub.com/
+END:VEVENT
+END:VCALENDAR
