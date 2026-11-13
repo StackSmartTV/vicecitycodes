@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vice City Codes//GTA 6 calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gta6-cloud@vicecodeshub.com
+DTSTAMP:20261101T160000Z
+DTSTART:20261119T060000Z
+DTEND:20261119T070000Z
+SUMMARY:GTA 6: Xbox Cloud Gaming streams start
+DESCRIPTION:From 1 AM ET on Xbox One and Xbox Series X|S\, at Series S settings. Game purchase required. Source: https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/ | More at https://vicecodeshub.com/
+URL:https://vicecodeshub.com/
+END:VEVENT
+END:VCALENDAR

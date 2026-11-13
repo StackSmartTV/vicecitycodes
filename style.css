@@ -581,3 +581,15 @@ footer .fan-disclaimer {
 @media (min-width:900px){.vun{left:auto;right:20px;transform:translate(0,140%)}.vun.vun-on{transform:translate(0,0)}}
 @media (prefers-reduced-motion:reduce){.vun{transition:none}}
 /* /vch-upnext */
+
+/* vch-readmark v1: New / Read chips on story cards */
+.vrm-chip{display:inline-block;margin-left:.35rem;padding:.12rem .5rem;border-radius:999px;font:800 .68rem/1.3 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle}
+.vrm-new{background:#ff2d95;color:#0d0015;box-shadow:0 0 10px rgba(255,45,149,.55)}
+.vrm-read{background:transparent;color:#00f0ff;border:1px solid rgba(0,240,255,.6)}
+.rn-card.vrm-is-read{border-color:rgba(0,240,255,.22)}
+.rn-card.vrm-is-read .rn-title{color:#c9b3e6}
+.vrm-sum{margin:-.4rem 0 .9rem;font:700 .9rem/1.4 system-ui,sans-serif;color:#00f0ff}
+.vrm-sum::before{content:"\2022";color:#ff2d95;margin-right:.45rem;text-shadow:0 0 8px #ff2d95}
+.vrm-sum[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.vrm-new{box-shadow:none}}
+/* /vch-readmark */

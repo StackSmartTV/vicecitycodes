@@ -1303,6 +1303,13 @@
   ],
   "news": [
     {
+      "id": "gta6-xbox-cloud-gaming-november-19",
+      "title": "Grand Theft Auto VI streams on Xbox Cloud Gaming from 1 AM ET on November 19",
+      "date": "2026-11-10",
+      "summary": "Xbox Wire says GTA VI is playable day one through Xbox Cloud Gaming on Xbox One and Xbox Series X|S from 1 AM ET, using Xbox Series S settings; the game must be purchased separately.",
+      "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/"
+    },
+    {
       "id": "gta6-preload-live-november-10",
       "title": "Pre-load is live on PS5 and Xbox",
       "date": "2026-11-10",
@@ -1361,9 +1368,15 @@
   ],
   "checklist": [
     {
-      "id": "pre-load-opens-november-10",
-      "title": "Pre-load opens November 10",
+      "id": "pre-load-is-live-opened-november-10",
+      "title": "Pre-load is live (opened November 10)",
       "detail": "Digital pre-orders can begin pre-loading on November 10, 2026 (midnight local time on PS5, 12 a.m. GMT on Xbox Series X|S), before the November 19, 2026 launch. Source: https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+      "group": "launch-prep"
+    },
+    {
+      "id": "install-the-pre-launch-update-v1-002-about-1-gb-reported",
+      "title": "Install the pre-launch update (v1.002, about 1 GB, reported)",
+      "detail": null,
       "group": "launch-prep"
     },
     {
