@@ -593,3 +593,25 @@ footer .fan-disclaimer {
 .vrm-sum[hidden]{display:none}
 @media (prefers-reduced-motion:reduce){.vrm-new{box-shadow:none}}
 /* /vch-readmark */
+
+/* vch-guides v1: guide pages, labels, tables, hubs (2026-11-16) */
+.g-lbl{display:inline-block;padding:.02rem .45rem;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;vertical-align:.12em;white-space:nowrap}
+.g-ok{background:#0f5132;color:#d1f7e4}
+.g-rep{background:#664d03;color:#fff3cd}
+.g-no{background:#58151c;color:#f8d7da}
+.g-legend{font-size:.85rem;color:var(--muted);margin:0 0 1rem;line-height:1.7}
+.g-status{padding:.9rem 1.1rem;border-radius:10px;background:var(--card);border-left:3px solid var(--neon-pink)}
+.g-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 1.2rem}
+.g-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.g-table caption{text-align:left;font-weight:700;margin-bottom:.4rem;color:var(--muted)}
+.g-table th,.g-table td{padding:.5rem .6rem;border-bottom:1px solid rgba(255,255,255,.1);text-align:left;vertical-align:top}
+.g-table code{white-space:nowrap;color:var(--neon-cyan)}
+.hub{max-width:1000px;margin:0 auto}
+.hub h3{font-size:1.3rem;margin:1.8rem 0 .8rem;color:var(--neon-pink);scroll-margin-top:84px}
+.hub-jump{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.hub-jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border-radius:999px;background:var(--card);border:1px solid rgba(255,255,255,.12);color:var(--text);text-decoration:none;font-weight:700}
+.hub-jump a:hover,.hub-jump a:focus-visible{border-color:var(--neon-pink)}
+.hub ul{padding-left:1.2rem;line-height:1.7}
+.hub ul a,.hub p a{color:var(--neon-cyan)}
+@media(max-width:480px){.g-table code{white-space:normal;word-break:break-all}}
+/* /vch-guides */
