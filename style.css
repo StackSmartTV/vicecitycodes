@@ -615,3 +615,29 @@ footer .fan-disclaimer {
 .hub ul a,.hub p a{color:var(--neon-cyan)}
 @media(max-width:480px){.g-table code{white-space:normal;word-break:break-all}}
 /* /vch-guides */
+
+/* vch-checklist v1: launch-night checklist */
+.vck{margin-top:1rem;border:1px solid rgba(255,46,151,.35)}
+.vck h3{margin-bottom:.3rem}
+.vck-note{font-size:.92rem;color:var(--muted);margin-bottom:.7rem}
+.vck-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;margin-bottom:.8rem}
+.vck-bar[hidden]{display:none}
+.vck-bar progress{flex:1 1 140px;height:.7rem;border:0;border-radius:999px;background:rgba(0,240,255,.15);overflow:hidden;accent-color:#ff2d95}
+.vck-bar progress::-webkit-progress-bar{background:rgba(0,240,255,.15);border-radius:999px}
+.vck-bar progress::-webkit-progress-value{background:linear-gradient(90deg,#ff2d95,#00f0ff);border-radius:999px}
+.vck-bar progress::-moz-progress-bar{background:linear-gradient(90deg,#ff2d95,#00f0ff);border-radius:999px}
+.vck-count{font:700 .9rem/1.3 system-ui,sans-serif;color:var(--neon-cyan)}
+.vck-all .vck-count{color:#ff2d95}
+.vck-reset{min-height:44px;padding:.3rem .9rem;border-radius:999px;border:1px solid rgba(0,240,255,.5);background:transparent;color:var(--text);font:700 .85rem system-ui,sans-serif;cursor:pointer}
+.vck-reset:hover,.vck-reset:focus-visible{border-color:#ff2d95;color:#ff2d95}
+.vck-list{list-style:none;margin:0;padding:0}
+.vck-list li{display:flex;gap:.7rem;align-items:flex-start;padding:.55rem 0;border-top:1px solid rgba(255,255,255,.08)}
+.vck-list li:first-child{border-top:0}
+.vck-list input{flex:0 0 auto;width:1.35rem;height:1.35rem;margin:.15rem 0 0;accent-color:#ff2d95;cursor:pointer}
+.vck-list label{display:block;min-height:44px;cursor:pointer;flex:1}
+.vck-t{display:block;font-weight:700;color:var(--text)}
+.vck-d{display:block;font-size:.88rem;color:var(--muted)}
+.vck-d a{color:var(--neon-cyan);text-decoration:underline}
+.vck-done .vck-t{color:#c9b3e6;text-decoration:line-through;text-decoration-color:#ff2d95}
+.vck input:focus-visible{outline:2px solid #00f0ff;outline-offset:2px}
+/* /vch-checklist */

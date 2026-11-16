@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/gta-6-1-billion-presales-day-one-patch-macca.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/gta-6-launch-calendar.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -315,5 +315,13 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/news.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/news.html"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/gta-6-launch-week-midnight-unlock-second-update-youtube-stream.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-launch-week-midnight-unlock-second-update-youtube-stream.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/gta-6-launch-week-midnight-unlock-second-update-youtube-stream.html"/>
   </url>
 </urlset>

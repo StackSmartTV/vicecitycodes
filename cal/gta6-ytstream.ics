@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vice City Codes//GTA 6 calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gta6-ytstream@vicecodeshub.com
+DTSTAMP:20261101T160000Z
+DTSTART:20261119T040000Z
+DTEND:20261120T050000Z
+SUMMARY:GTA 6: YouTube launch livestream
+DESCRIPTION:Pre-show with RDCWorld at 11 PM ET\, then a 24-hour stream on youtube.com/youtube from 12 AM ET Nov 19. Source: https://blog.youtube/news-and-events/youtube-rockstar-games-gta-vi-launch/ | More at https://vicecodeshub.com/
+URL:https://vicecodeshub.com/
+END:VEVENT
+END:VCALENDAR

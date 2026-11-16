@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T00:00:00Z",
+  "updatedAt": "2026-11-13T00:00:00Z",
   "games": [
     {
       "id": "gta5",
@@ -1303,6 +1303,13 @@
   ],
   "news": [
     {
+      "id": "gta6-midnight-local-release",
+      "title": "GTA 6 unlocks at midnight local time on PS5 and Xbox",
+      "date": "2026-11-13",
+      "summary": "Rockstar's support site says Grand Theft Auto VI will release at midnight local time on November 19, 2026, in all regions for both PlayStation 5 and Xbox Series X|S. Xbox Cloud Gaming streaming starts at 1 a.m. ET on November 19.",
+      "url": "https://www.mirror.co.uk/gaming/gta-6-worldwide-release-times-37874260"
+    },
+    {
       "id": "gta6-xbox-cloud-gaming-november-19",
       "title": "Grand Theft Auto VI streams on Xbox Cloud Gaming from 1 AM ET on November 19",
       "date": "2026-11-10",
@@ -1374,8 +1381,14 @@
       "group": "launch-prep"
     },
     {
-      "id": "install-the-pre-launch-update-v1-002-about-1-gb-reported",
-      "title": "Install the pre-launch update (v1.002, about 1 GB, reported)",
+      "id": "install-the-pre-launch-updates-1-002-000-about-1-gb-and-01-002-001-about-600-mb-sizes-reported",
+      "title": "Install the pre-launch updates (1.002.000, about 1 GB, and 01.002.001, about 600 MB; sizes reported)",
+      "detail": null,
+      "group": "launch-prep"
+    },
+    {
+      "id": "gta-6-unlocks-at-midnight-local-time-on-november-19-ps5-and-xbox",
+      "title": "GTA 6 unlocks at midnight local time on November 19 (PS5 and Xbox)",
       "detail": null,
       "group": "launch-prep"
     },
