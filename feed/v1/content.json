@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13T00:00:00Z",
+  "updatedAt": "2026-11-18T00:00:00Z",
   "games": [
     {
       "id": "gta5",
@@ -1299,9 +1299,645 @@
       "disablesAchievements": true,
       "verified": true,
       "source": "https://vicecodeshub.com/gta-5-cheats.html"
+    },
+    {
+      "id": "gta6-250-000",
+      "gameId": "gta6",
+      "name": "$250,000",
+      "category": "Player",
+      "effect": "Instantly adds $250,000 (the only money cheat)",
+      "inputs": {
+        "ps": [
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "UP",
+          "LEFT",
+          "DOWN",
+          "RIGHT"
+        ],
+        "xbox": [
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "UP",
+          "LEFT",
+          "DOWN",
+          "RIGHT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-raise-heat-level",
+      "gameId": "gta6",
+      "name": "Raise Heat Level",
+      "category": "Player",
+      "effect": "Raises your heat level across the map",
+      "inputs": {
+        "ps": [
+          "LEFT",
+          "DOWN",
+          "RIGHT",
+          "DOWN",
+          "UP",
+          "DOWN",
+          "UP"
+        ],
+        "xbox": [
+          "LEFT",
+          "DOWN",
+          "RIGHT",
+          "DOWN",
+          "UP",
+          "DOWN",
+          "UP"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Lose a 3-star wanted level 25 times. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-unlimited-focus",
+      "gameId": "gta6",
+      "name": "Unlimited Focus",
+      "category": "Player",
+      "effect": "Focus never runs out",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "UP",
+          "DOWN",
+          "UP",
+          "DOWN",
+          "UP",
+          "DOWN",
+          "UP",
+          "RIGHT"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "UP",
+          "DOWN",
+          "UP",
+          "DOWN",
+          "UP",
+          "DOWN",
+          "UP",
+          "RIGHT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-body-armor",
+      "gameId": "gta6",
+      "name": "Body Armor",
+      "category": "Player",
+      "effect": "Adds body armor to your loadout",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "UP",
+          "UP",
+          "UP",
+          "UP",
+          "UP",
+          "DOWN",
+          "DOWN"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "UP",
+          "UP",
+          "UP",
+          "UP",
+          "UP",
+          "DOWN",
+          "DOWN"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Complete 100 workouts. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-max-ammo",
+      "gameId": "gta6",
+      "name": "Max Ammo",
+      "category": "Combat",
+      "effect": "Fills all ammo to maximum",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "UP",
+          "DOWN",
+          "LEFT"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "UP",
+          "DOWN",
+          "LEFT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Win 25 bronze medals or better at shooting ranges (PC Gamer says 20). To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-infinite-ammo",
+      "gameId": "gta6",
+      "name": "Infinite Ammo",
+      "category": "Combat",
+      "effect": "Ammo never runs out",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "DOWN",
+          "DOWN",
+          "DOWN"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "DOWN",
+          "DOWN",
+          "DOWN"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Win 25 silver medals or better at shooting ranges. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-no-reload",
+      "gameId": "gta6",
+      "name": "No Reload",
+      "category": "Combat",
+      "effect": "Never run out of ammo, no reloading",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "DOWN",
+          "DOWN",
+          "UP"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "DOWN",
+          "DOWN",
+          "UP"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Win 25 gold medals at shooting ranges. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-attack-force",
+      "gameId": "gta6",
+      "name": "Attack Force",
+      "category": "Combat",
+      "effect": "Bullets and melee hits launch targets",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "DOWN",
+          "DOWN",
+          "UP",
+          "DOWN"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "DOWN",
+          "DOWN",
+          "UP",
+          "DOWN"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-exploding-balls",
+      "gameId": "gta6",
+      "name": "Exploding Balls",
+      "category": "Combat",
+      "effect": "Sports balls explode on impact",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Hit 20 enemies with explosive damage. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-vehicle-force",
+      "gameId": "gta6",
+      "name": "Vehicle Force",
+      "category": "Combat",
+      "effect": "Vehicle collisions launch targets",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "UP",
+          "DOWN"
+        ],
+        "xbox": [
+          "DOWN",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "UP",
+          "DOWN"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Kill 25 enemies with a vehicle. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-maibatsu-boomazoom",
+      "gameId": "gta6",
+      "name": "Maibatsu Boomazoom",
+      "category": "Vehicles",
+      "effect": "Spawns a Maibatsu Boomazoom",
+      "inputs": {
+        "ps": [
+          "LEFT",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "LEFT"
+        ],
+        "xbox": [
+          "LEFT",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "LEFT",
+          "UP",
+          "LEFT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Complete 5 shopping challenges. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-mtl-pumper",
+      "gameId": "gta6",
+      "name": "MTL Pumper",
+      "category": "Vehicles",
+      "effect": "Spawns an MTL Pumper fire truck",
+      "inputs": {
+        "ps": [
+          "LEFT",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "RIGHT",
+          "RIGHT",
+          "UP"
+        ],
+        "xbox": [
+          "LEFT",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "RIGHT",
+          "RIGHT",
+          "UP"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Discover the MTL Pumper in the Progress menu. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-hvy-bulldozer",
+      "gameId": "gta6",
+      "name": "HVY Bulldozer",
+      "category": "Vehicles",
+      "effect": "Spawns an HVY Bulldozer",
+      "inputs": {
+        "ps": [
+          "LEFT",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "RIGHT",
+          "RIGHT",
+          "DOWN"
+        ],
+        "xbox": [
+          "LEFT",
+          "UP",
+          "RIGHT",
+          "DOWN",
+          "LEFT",
+          "RIGHT",
+          "RIGHT",
+          "DOWN"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Discover the HVY Bulldozer in the Progress menu. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-cycle-weather",
+      "gameId": "gta6",
+      "name": "Cycle Weather",
+      "category": "Environment",
+      "effect": "Changes the weather",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "RIGHT",
+          "UP",
+          "DOWN",
+          "RIGHT",
+          "UP",
+          "RIGHT"
+        ],
+        "xbox": [
+          "DOWN",
+          "RIGHT",
+          "UP",
+          "DOWN",
+          "RIGHT",
+          "UP",
+          "RIGHT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-cataclysm",
+      "gameId": "gta6",
+      "name": "Cataclysm",
+      "category": "Screen Filter",
+      "effect": "Fills the world with murky smoke",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "RIGHT",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "RIGHT"
+        ],
+        "xbox": [
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "RIGHT",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "RIGHT",
+          "RIGHT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Discover Martha's Vamos in the Progress menu. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-dollhouse",
+      "gameId": "gta6",
+      "name": "Dollhouse",
+      "category": "Screen Filter",
+      "effect": "Vivid filter with a narrow aspect ratio",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "RIGHT",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "DOWN",
+          "RIGHT"
+        ],
+        "xbox": [
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "RIGHT",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "DOWN",
+          "RIGHT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Spend 8 hours with your partner. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against PC Gamer, GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
+    {
+      "id": "gta6-faded-glory",
+      "gameId": "gta6",
+      "name": "Faded Glory",
+      "category": "Screen Filter",
+      "effect": "Color CRT TV filter",
+      "inputs": {
+        "ps": [
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "RIGHT",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "LEFT",
+          "RIGHT"
+        ],
+        "xbox": [
+          "DOWN",
+          "DOWN",
+          "UP",
+          "RIGHT",
+          "RIGHT",
+          "UP",
+          "LEFT",
+          "LEFT",
+          "LEFT",
+          "RIGHT"
+        ],
+        "pc": null,
+        "phone": null
+      },
+      "notes": "Cheats do nothing until you finish all 91 story missions. Then unlock: Rob 50 stores with your partner. To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), press R1 or RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session. Save first, then quit without saving. Checked against GameSpot, PowerPyx.",
+      "disablesAchievements": true,
+      "verified": true,
+      "source": "https://vicecodeshub.com/gta-6-cheats.html"
     }
   ],
   "news": [
+    {
+      "id": "gta6-cheats-last-checked",
+      "title": "17 verified GTA 6 cheat codes added",
+      "date": "2026-11-18",
+      "summary": "Vice Codes Hub's GTA 6 cheats page was last updated on November 18, 2026. This feed includes 17 GTA 6 codes verified by at least two of PC Gamer, GameSpot and PowerPyx. Cheats do nothing until you finish all 91 story missions. Press Up for the phone, hold L1/LB, press R1/RB, then enter the D-pad input. Using a cheat disables saving and trophies for that session.",
+      "url": "https://vicecodeshub.com/gta-6-cheats.html"
+    },
     {
       "id": "gta6-midnight-local-release",
       "title": "GTA 6 unlocks at midnight local time on PS5 and Xbox",
@@ -1350,13 +1986,6 @@
       "date": "2026-11-03",
       "summary": "Rockstar's Newswire says digital pre-loading starts November 10, 2026: at midnight local time on PlayStation 5 and at 12 a.m. GMT worldwide on Xbox Series X|S. Code-in-box copies arrive at retailers from November 12. The pre-load file needs up to 212 GB depending on the console. Launch is still November 19, 2026.",
       "url": "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10"
-    },
-    {
-      "id": "gta5-cheats-last-checked",
-      "title": "GTA 5 cheat list checked; no GTA 6 codes yet",
-      "date": "2026-10-20",
-      "summary": "Vice Codes Hub's GTA 5 cheats page was last checked on October 20, 2026. It says no official GTA 6 cheat codes have been confirmed. This feed includes the verified GTA 5 codes and no GTA 6 codes.",
-      "url": "https://vicecodeshub.com/gta-5-cheats.html"
     },
     {
       "id": "gta6-preorder-preload",

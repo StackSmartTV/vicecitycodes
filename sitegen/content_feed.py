@@ -2,11 +2,13 @@
 
 Source of truth:
 - gta-5-cheats.html: the verified GTA 5 cheat table (button combos, PC codes, phone numbers)
+- gta-6-cheats.html: verified GTA 6 cheats (D-pad inputs published by at least two sources)
 - index.html: GTA 6 launch date, platforms, and the pre-launch checklist
 - sitegen/news.json: dated news items with source URLs
 
-GTA 6 cheats are never invented. The feed lists a game entry and zero cheats
-until a real code exists on the site.
+GTA 6 cheats are never invented. Only codes from the verified tables on the
+GTA 6 cheats page are included. Unverified inputs, including Raise Wanted
+Level, stay off the feed until a second source matches.
 """
 
 from __future__ import annotations
@@ -19,6 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CHEATS_HTML = ROOT / "gta-5-cheats.html"
+GTA6_CHEATS_HTML = ROOT / "gta-6-cheats.html"
 INDEX_HTML = ROOT / "index.html"
 NEWS_JSON = Path(__file__).resolve().parent / "news.json"
 FEED_PATH = ROOT / "feed" / "v1" / "content.json"
@@ -26,7 +29,10 @@ FEED_PATH = ROOT / "feed" / "v1" / "content.json"
 SCHEMA_VERSION = 1
 GTA6_RELEASE_DATE = "2026-11-19"
 GTA6_PLATFORMS = ["PS5", "Xbox Series X|S"]
+EXPECTED_GTA5_CHEATS = 35
+EXPECTED_GTA6_CHEATS = 17
 CHEATS_PAGE_URL = "https://vicecodeshub.com/gta-5-cheats.html"
+GTA6_CHEATS_PAGE_URL = "https://vicecodeshub.com/gta-6-cheats.html"
 TAKE_TWO_PREORDER_URL = (
     "https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/"
     "news-release-details/rockstar-games-announces-pre-orders-grand-theft-auto-vi"
@@ -71,6 +77,24 @@ _TITLE_TO_TOKEN = {
     "Left": "LEFT",
     "Right": "RIGHT",
 }
+
+_GTA6_CATEGORY = {
+    "Player cheats": "Player",
+    "Combat cheats": "Combat",
+    "Vehicle spawn cheats": "Vehicles",
+    "Environment cheats": "Environment",
+    "Screen filter cheats": "Screen Filter",
+}
+
+_GTA6_STORY_CATCH = "Cheats do nothing until you finish all 91 story missions."
+_GTA6_HOW_TO_ENTER = (
+    "To enter: press Up on the D-pad to open the phone, hold L1 (PS5) or LB (Xbox), "
+    "press R1 or RB, then enter the D-pad input."
+)
+_GTA6_SAVE_NOTE = (
+    "Using a cheat disables saving and trophies for that session. "
+    "Save first, then quit without saving."
+)
 
 _ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _ISO_DATETIME = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
@@ -368,6 +392,205 @@ def parse_cheats(html: str) -> list[dict]:
     return cheats
 
 
+def _tokens_from_label(label: str) -> list[str]:
+    parts = [part.strip() for part in label.split(",") if part.strip()]
+    tokens = []
+    for part in parts:
+        token = _TITLE_TO_TOKEN.get(part) or _TITLE_TO_TOKEN.get(part.title())
+        if not token:
+            raise ValueError(f"unknown GTA 6 d-pad direction: {part!r}")
+        tokens.append(token)
+    return tokens
+
+
+class _GTA6CheatTableParser(HTMLParser):
+    """Pull one row per verified cheat from the GTA 6 g-tables."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.section = ""
+        self.in_heading = False
+        self.heading_parts: list[str] = []
+        self.in_table = False
+        self.category: str | None = None
+        self.in_row = False
+        self.in_cell = False
+        self.in_strong = False
+        self.in_small = False
+        self.in_code = False
+        self.in_link = False
+        self.cell: dict | None = None
+        self.cells: list[dict] = []
+        self.cheats: list[dict] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attr = {key: value or "" for key, value in attrs}
+        if tag in {"h2", "h3"}:
+            self.in_heading = True
+            self.heading_parts = []
+            return
+        if tag == "table" and "g-table" in attr.get("class", "").split():
+            self.in_table = True
+            self.category = _GTA6_CATEGORY.get(self.section)
+            return
+        if not self.in_table or not self.category:
+            return
+        if tag == "tr":
+            self.in_row = True
+            self.cells = []
+            return
+        if tag == "td" and self.in_row:
+            self.in_cell = True
+            self.cell = {
+                "strong": [],
+                "small": [],
+                "code": [],
+                "aria": "",
+                "links": [],
+                "plain": [],
+                "link_parts": [],
+            }
+            return
+        if not self.in_cell or self.cell is None:
+            return
+        if tag == "strong":
+            self.in_strong = True
+        elif tag == "small":
+            self.in_small = True
+        elif tag == "code":
+            self.in_code = True
+            if attr.get("aria-label"):
+                self.cell["aria"] = attr["aria-label"]
+        elif tag == "a":
+            self.in_link = True
+            self.cell["link_parts"] = []
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"h2", "h3"} and self.in_heading:
+            self.in_heading = False
+            self.section = " ".join("".join(self.heading_parts).split())
+            return
+        if tag == "table" and self.in_table:
+            self.in_table = False
+            self.category = None
+            return
+        if not self.in_table:
+            return
+        if tag == "strong":
+            self.in_strong = False
+        elif tag == "small":
+            self.in_small = False
+        elif tag == "code":
+            self.in_code = False
+        elif tag == "a" and self.in_link:
+            self.in_link = False
+            if self.cell is not None:
+                label = " ".join("".join(self.cell.get("link_parts", [])).split())
+                if label:
+                    self.cell["links"].append(label)
+        elif tag == "td" and self.in_cell:
+            self.in_cell = False
+            assert self.cell is not None
+            self.cells.append(self.cell)
+            self.cell = None
+        elif tag == "tr" and self.in_row:
+            self.in_row = False
+            self._close_row()
+
+    def handle_data(self, data: str) -> None:
+        if self.in_heading:
+            self.heading_parts.append(data)
+            return
+        if not self.in_cell or self.cell is None:
+            return
+        if self.in_strong:
+            self.cell["strong"].append(data)
+        elif self.in_small:
+            self.cell["small"].append(data)
+        elif self.in_code:
+            self.cell["code"].append(data)
+        elif self.in_link:
+            self.cell.setdefault("link_parts", []).append(data)
+        else:
+            self.cell["plain"].append(data)
+
+    def _close_row(self) -> None:
+        if len(self.cells) < 4 or not self.category:
+            return
+        name_cell, input_cell, unlock_cell, source_cell = self.cells[:4]
+        name = " ".join("".join(name_cell["strong"]).split())
+        if not name:
+            return
+        effect = " ".join("".join(name_cell["small"]).split())
+        label = input_cell["aria"] or " ".join("".join(input_cell["small"]).split())
+        if not label:
+            raise ValueError(f"GTA 6 cheat {name!r} is missing a d-pad input")
+        buttons = _tokens_from_label(label)
+        unlock = " ".join(
+            "".join(unlock_cell["plain"] + unlock_cell["small"] + unlock_cell["strong"]).split()
+        )
+        sources = ", ".join(source_cell["links"])
+        self.cheats.append(
+            {
+                "name": name,
+                "effect": effect,
+                "category": self.category,
+                "buttons": buttons,
+                "unlock": unlock,
+                "sources": sources,
+            }
+        )
+
+
+def _gta6_notes(unlock: str, sources: str) -> str:
+    parts = [_GTA6_STORY_CATCH]
+    unlock_clean = " ".join((unlock or "").split())
+    if unlock_clean and unlock_clean.lower() not in {"finish the story", "finish the story."}:
+        parts.append(f"Then unlock: {unlock_clean}.")
+    parts.append(_GTA6_HOW_TO_ENTER)
+    parts.append(_GTA6_SAVE_NOTE)
+    if sources:
+        parts.append(f"Checked against {sources}.")
+    return " ".join(parts)
+
+
+def parse_gta6_cheats(html: str) -> list[dict]:
+    parser = _GTA6CheatTableParser()
+    parser.feed(html)
+    parser.close()
+    if not parser.cheats:
+        raise ValueError("no verified cheats parsed from gta-6-cheats.html")
+    cheats = []
+    seen: set[str] = set()
+    for row in parser.cheats:
+        name = row["name"]
+        cheat_id = "gta6-" + _slug(name)
+        if cheat_id in seen:
+            raise ValueError(f"duplicate cheat id: {cheat_id}")
+        seen.add(cheat_id)
+        buttons = row["buttons"]
+        cheats.append(
+            {
+                "id": cheat_id,
+                "gameId": "gta6",
+                "name": name,
+                "category": row["category"],
+                "effect": row["effect"],
+                "inputs": {
+                    "ps": list(buttons),
+                    "xbox": list(buttons),
+                    "pc": None,
+                    "phone": None,
+                },
+                "notes": _gta6_notes(row["unlock"], row["sources"]),
+                "disablesAchievements": True,
+                "verified": True,
+                "source": GTA6_CHEATS_PAGE_URL,
+            }
+        )
+    return cheats
+
+
 def _require(condition: bool, message: str) -> None:
     if not condition:
         raise ValueError(message)
@@ -437,23 +660,34 @@ def _load_news() -> list[dict]:
     return data
 
 
-def _site_news(cheats_html: str, checked: str) -> dict:
-    _require(
-        "No official GTA 6 cheat codes have been confirmed" in cheats_html,
-        "refusing to claim GTA 6 has no codes unless the cheats page says so",
+def _gta6_last_updated(html: str) -> str:
+    match = re.search(
+        r'Last updated.*?<time datetime="(\d{4}-\d{2}-\d{2})"',
+        html,
+        re.S,
     )
+    _require(match is not None, "GTA 6 cheats page is missing Last updated date")
+    return match.group(1)
+
+
+def _site_news(gta6_html: str, gta6_cheats: list[dict]) -> dict:
+    checked = _gta6_last_updated(gta6_html)
     parsed = datetime.strptime(checked, "%Y-%m-%d")
     pretty = f"{parsed.strftime('%B')} {parsed.day}, {parsed.year}"
+    count = len(gta6_cheats)
     return {
-        "id": "gta5-cheats-last-checked",
-        "title": "GTA 5 cheat list checked; no GTA 6 codes yet",
+        "id": "gta6-cheats-last-checked",
+        "title": f"{count} verified GTA 6 cheat codes added",
         "date": checked,
         "summary": (
-            f"Vice Codes Hub's GTA 5 cheats page was last checked on {pretty}. "
-            "It says no official GTA 6 cheat codes have been confirmed. "
-            "This feed includes the verified GTA 5 codes and no GTA 6 codes."
+            f"Vice Codes Hub's GTA 6 cheats page was last updated on {pretty}. "
+            f"This feed includes {count} GTA 6 codes verified by at least two of "
+            "PC Gamer, GameSpot and PowerPyx. Cheats do nothing until you finish "
+            "all 91 story missions. Press Up for the phone, hold L1/LB, press R1/RB, "
+            "then enter the D-pad input. Using a cheat disables saving and trophies "
+            "for that session."
         ),
-        "url": CHEATS_PAGE_URL,
+        "url": GTA6_CHEATS_PAGE_URL,
     }
 
 
@@ -461,8 +695,10 @@ def build_feed(
     cheats_html: str | None = None,
     index_html: str | None = None,
     news: list[dict] | None = None,
+    gta6_html: str | None = None,
 ) -> dict:
     cheats_html = CHEATS_HTML.read_text(encoding="utf-8") if cheats_html is None else cheats_html
+    gta6_html = GTA6_CHEATS_HTML.read_text(encoding="utf-8") if gta6_html is None else gta6_html
     index_html = INDEX_HTML.read_text(encoding="utf-8") if index_html is None else index_html
     news = _load_news() if news is None else news
 
@@ -484,12 +720,27 @@ def build_feed(
     )
     _require("Grand Theft Auto VI" in index_html, "homepage is missing the Grand Theft Auto VI title")
 
-    cheats = parse_cheats(cheats_html)
-    _require(len(cheats) == 35, f"expected 35 GTA 5 cheats, parsed {len(cheats)}")
-    _require(all(cheat["gameId"] == "gta5" for cheat in cheats), "parsed a non-GTA 5 cheat")
+    gta5_cheats = parse_cheats(cheats_html)
+    _require(
+        len(gta5_cheats) == EXPECTED_GTA5_CHEATS,
+        f"expected {EXPECTED_GTA5_CHEATS} GTA 5 cheats, parsed {len(gta5_cheats)}",
+    )
+    _require(all(cheat["gameId"] == "gta5" for cheat in gta5_cheats), "parsed a non-GTA 5 cheat")
 
-    checked = _last_checked(cheats_html)
-    feed_news = list(news) + [_site_news(cheats_html, checked)]
+    gta6_cheats = parse_gta6_cheats(gta6_html)
+    _require(
+        len(gta6_cheats) == EXPECTED_GTA6_CHEATS,
+        f"expected {EXPECTED_GTA6_CHEATS} GTA 6 cheats, parsed {len(gta6_cheats)}",
+    )
+    _require(all(cheat["gameId"] == "gta6" and cheat["verified"] for cheat in gta6_cheats), "parsed an unverified GTA 6 cheat")
+    _require(
+        all(cheat["name"] != "Raise Wanted Level" for cheat in gta6_cheats),
+        "unverified Raise Wanted Level must stay off the feed",
+    )
+
+    cheats = gta5_cheats + gta6_cheats
+
+    feed_news = list(news) + [_site_news(gta6_html, gta6_cheats)]
     feed_news.sort(key=lambda item: (item["date"], item["id"]), reverse=True)
     newest = max(item["date"] for item in feed_news)
 
@@ -601,6 +852,15 @@ def validate_feed(data: object) -> list[str]:
             err(f"{prefix}.gameId is not a known game")
         if cheat["gameId"] == "gta6":
             gta6_cheats += 1
+            if cheat.get("verified"):
+                inputs = cheat.get("inputs")
+                if isinstance(inputs, dict):
+                    if inputs.get("pc") is not None or inputs.get("phone") is not None:
+                        err(f"{prefix} GTA 6 cheats must have null pc and phone inputs")
+                    if inputs.get("ps") != inputs.get("xbox"):
+                        err(f"{prefix} GTA 6 PlayStation and Xbox inputs must match")
+            if not cheat.get("disablesAchievements"):
+                err(f"{prefix} GTA 6 cheats must disable achievements")
         for field in ("name", "category", "effect"):
             if not isinstance(cheat[field], str) or not cheat[field]:
                 err(f"{prefix}.{field} must be a non-empty string")
@@ -628,8 +888,13 @@ def validate_feed(data: object) -> list[str]:
             err(f"{prefix}.verified must be a bool")
         if cheat["source"] is not None and not isinstance(cheat["source"], str):
             err(f"{prefix}.source must be a string or null")
-    if gta6_cheats:
-        err("gta6 must have zero cheats")
+    gta6_verified = sum(
+        1
+        for cheat in cheats
+        if isinstance(cheat, dict) and cheat.get("gameId") == "gta6" and cheat.get("verified")
+    )
+    if gta6_verified != EXPECTED_GTA6_CHEATS:
+        err(f"expected {EXPECTED_GTA6_CHEATS} verified GTA 6 cheats, found {gta6_verified}")
     if not any(isinstance(cheat, dict) and cheat.get("gameId") == "gta5" for cheat in cheats):
         err("expected verified GTA 5 cheats")
 

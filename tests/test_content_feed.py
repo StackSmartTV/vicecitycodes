@@ -7,7 +7,10 @@ import unittest
 
 from sitegen.content_feed import (
     BUTTON_TOKENS,
+    EXPECTED_GTA5_CHEATS,
+    EXPECTED_GTA6_CHEATS,
     FEED_PATH,
+    GTA6_CHEATS_PAGE_URL,
     GTA6_PLATFORMS,
     GTA6_RELEASE_DATE,
     build_feed,
@@ -29,14 +32,48 @@ class ContentFeedTest(unittest.TestCase):
         self.assertEqual(validate_feed(rebuilt), [])
         self.assertEqual(committed, rebuilt)
 
-    def test_gta6_has_no_invented_cheats(self) -> None:
+    def test_gta6_has_verified_launch_codes(self) -> None:
         feed = build_feed()
         gta6 = next(game for game in feed["games"] if game["id"] == "gta6")
         self.assertEqual(gta6["releaseDate"], GTA6_RELEASE_DATE)
         self.assertEqual(gta6["platforms"], GTA6_PLATFORMS)
-        self.assertEqual([cheat for cheat in feed["cheats"] if cheat["gameId"] == "gta6"], [])
-        self.assertEqual(len(feed["cheats"]), 35)
-        self.assertTrue(all(cheat["gameId"] == "gta5" for cheat in feed["cheats"]))
+        gta5 = [cheat for cheat in feed["cheats"] if cheat["gameId"] == "gta5"]
+        gta6_cheats = [cheat for cheat in feed["cheats"] if cheat["gameId"] == "gta6"]
+        self.assertEqual(len(gta5), EXPECTED_GTA5_CHEATS)
+        self.assertEqual(len(gta6_cheats), EXPECTED_GTA6_CHEATS)
+        self.assertTrue(all(cheat["verified"] for cheat in gta6_cheats))
+        self.assertTrue(all(cheat["disablesAchievements"] for cheat in gta6_cheats))
+        names = {cheat["name"] for cheat in gta6_cheats}
+        self.assertIn("$250,000", names)
+        self.assertIn("Raise Heat Level", names)
+        self.assertNotIn("Raise Wanted Level", names)
+
+        money = next(cheat for cheat in gta6_cheats if cheat["name"] == "$250,000")
+        expected = ["UP", "RIGHT", "DOWN", "LEFT", "UP", "LEFT", "DOWN", "RIGHT"]
+        self.assertEqual(money["inputs"]["ps"], expected)
+        self.assertEqual(money["inputs"]["xbox"], expected)
+        self.assertIsNone(money["inputs"]["pc"])
+        self.assertIsNone(money["inputs"]["phone"])
+        self.assertEqual(money["source"], GTA6_CHEATS_PAGE_URL)
+        notes = money["notes"].lower()
+        self.assertIn("91 story missions", notes)
+        self.assertIn("press up", notes)
+        self.assertIn("hold l1", notes)
+        self.assertIn("disables saving", notes)
+        self.assertIn("pc gamer", notes)
+        # Unlock is only the story, so no extra "then unlock" line.
+        self.assertNotIn("then unlock", notes)
+
+        armor = next(cheat for cheat in gta6_cheats if cheat["name"] == "Body Armor")
+        self.assertIn("complete 100 workouts", armor["notes"].lower())
+
+        for cheat in gta6_cheats:
+            for pad in ("ps", "xbox"):
+                self.assertTrue(set(cheat["inputs"][pad]) <= {"UP", "DOWN", "LEFT", "RIGHT"})
+
+        news_ids = [item["id"] for item in feed["news"]]
+        self.assertIn("gta6-cheats-last-checked", news_ids)
+        self.assertNotIn("gta5-cheats-last-checked", news_ids)
 
     def test_known_gta5_codes_and_button_tokens(self) -> None:
         feed = build_feed()
@@ -109,8 +146,8 @@ class ContentFeedTest(unittest.TestCase):
             }
         )
         errors = validate_feed(invented)
-        self.assertTrue(any("gta6" in error for error in errors))
         self.assertTrue(any("CROSS" in error for error in errors))
+        self.assertTrue(any("disable achievements" in error.lower() for error in errors))
 
 
 if __name__ == "__main__":
