@@ -96,6 +96,44 @@ _GTA6_SAVE_NOTE = (
     "Save first, then quit without saving."
 )
 
+# Optional per-game combo-screen hints. v1 app clients ignore unknown keys, so
+# this stays on schema version 1. Missing or partial objects are valid.
+ENTRY_METHOD_KEYS = ("playstation", "xbox", "pc", "phone")
+GTA5_ENTRY_METHOD = {
+    "playstation": (
+        "Enter the buttons during gameplay, or pause and enter them there. "
+        "Story Mode only."
+    ),
+    "xbox": (
+        "Enter the buttons during gameplay, or pause and enter them there. "
+        "Story Mode only."
+    ),
+    "pc": "Press ~ to open the console, then type the word. Story Mode only.",
+    "phone": (
+        "Open the in-game phone keypad and dial the number. "
+        "This works on consoles and PC."
+    ),
+}
+GTA6_ENTRY_METHOD = {
+    "playstation": (
+        "Press Up on the D-pad to open the phone, hold L1, press R1, then enter "
+        "the D-pad input. Cheats do nothing until you finish all 91 story missions. "
+        "Using a cheat disables saving and trophies for that session."
+    ),
+    "xbox": (
+        "Press Up on the D-pad to open the phone, hold LB, press RB, then enter "
+        "the D-pad input. Cheats do nothing until you finish all 91 story missions. "
+        "Using a cheat disables saving and trophies for that session."
+    ),
+    "pc": "Grand Theft Auto VI is not on PC, and no PC cheat codes are confirmed.",
+    "phone": (
+        "These cheats are not entered as phone numbers. On PlayStation or Xbox, "
+        "press Up on the D-pad to open the phone, hold L1 or LB, press R1 or RB, "
+        "then enter the D-pad input. Cheats do nothing until you finish all 91 "
+        "story missions. Using a cheat disables saving and trophies for that session."
+    ),
+}
+
 _ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _ISO_DATETIME = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 
@@ -753,12 +791,14 @@ def build_feed(
                 "title": "Grand Theft Auto V",
                 "releaseDate": None,
                 "platforms": ["PS3", "PS4", "PS5", "Xbox 360", "Xbox One", "Xbox Series X|S", "PC"],
+                "entryMethod": dict(GTA5_ENTRY_METHOD),
             },
             {
                 "id": "gta6",
                 "title": "Grand Theft Auto VI",
                 "releaseDate": GTA6_RELEASE_DATE,
                 "platforms": list(GTA6_PLATFORMS),
+                "entryMethod": dict(GTA6_ENTRY_METHOD),
             },
         ],
         "cheats": cheats,
@@ -769,6 +809,22 @@ def build_feed(
 
 def dump_feed(feed: dict) -> str:
     return json.dumps(feed, indent=2, ensure_ascii=False) + "\n"
+
+
+def _validate_entry_method(prefix: str, method: object) -> list[str]:
+    """entryMethod is optional. When present, only known platform keys are allowed."""
+    if not isinstance(method, dict):
+        return [f"{prefix} must be an object with optional {', '.join(ENTRY_METHOD_KEYS)} keys"]
+    errors: list[str] = []
+    unknown = [key for key in method if key not in ENTRY_METHOD_KEYS]
+    if unknown:
+        errors.append(f"{prefix} has unknown keys {unknown}")
+    for key, value in method.items():
+        if key not in ENTRY_METHOD_KEYS:
+            continue
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"{prefix}.{key} must be a non-empty string")
+    return errors
 
 
 def validate_feed(data: object) -> list[str]:
@@ -794,9 +850,11 @@ def validate_feed(data: object) -> list[str]:
         err("games must be a list")
         games = []
     game_ids = []
+    game_required = {"id", "title", "releaseDate", "platforms"}
+    game_allowed = game_required | {"entryMethod"}
     for index, game in enumerate(games):
         prefix = f"games[{index}]"
-        if not isinstance(game, dict) or set(game) != {"id", "title", "releaseDate", "platforms"}:
+        if not isinstance(game, dict) or not game_required <= set(game) <= game_allowed:
             err(f"{prefix} must have id, title, releaseDate, platforms")
             continue
         if game["id"] not in {"gta5", "gta6"}:
@@ -809,6 +867,8 @@ def validate_feed(data: object) -> list[str]:
         platforms = game["platforms"]
         if not isinstance(platforms, list) or not platforms or not all(isinstance(item, str) and item for item in platforms):
             err(f"{prefix}.platforms must be a non-empty list of strings")
+        if "entryMethod" in game:
+            errors.extend(_validate_entry_method(f"{prefix}.entryMethod", game["entryMethod"]))
         game_ids.append(game["id"])
     if game_ids != ["gta5", "gta6"]:
         err("games must be gta5 then gta6")

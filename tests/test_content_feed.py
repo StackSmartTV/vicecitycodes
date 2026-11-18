@@ -10,7 +10,9 @@ from sitegen.content_feed import (
     EXPECTED_GTA5_CHEATS,
     EXPECTED_GTA6_CHEATS,
     FEED_PATH,
+    GTA5_ENTRY_METHOD,
     GTA6_CHEATS_PAGE_URL,
+    GTA6_ENTRY_METHOD,
     GTA6_PLATFORMS,
     GTA6_RELEASE_DATE,
     build_feed,
@@ -149,6 +151,31 @@ class ContentFeedTest(unittest.TestCase):
         self.assertTrue(any("CROSS" in error for error in errors))
         self.assertTrue(any("disable achievements" in error.lower() for error in errors))
 
+
+
+    def test_games_include_optional_entry_method(self) -> None:
+        feed = build_feed()
+        by_id = {game["id"]: game for game in feed["games"]}
+        self.assertEqual(by_id["gta5"]["entryMethod"], GTA5_ENTRY_METHOD)
+        self.assertEqual(by_id["gta6"]["entryMethod"], GTA6_ENTRY_METHOD)
+        self.assertIn("hold L1", by_id["gta6"]["entryMethod"]["playstation"])
+        self.assertIn("hold LB", by_id["gta6"]["entryMethod"]["xbox"])
+        self.assertIn("91 story missions", by_id["gta6"]["entryMethod"]["playstation"])
+        self.assertIn("disables saving", by_id["gta6"]["entryMethod"]["playstation"])
+        self.assertNotIn("during gameplay", by_id["gta6"]["entryMethod"]["playstation"])
+
+    def test_entry_method_is_optional_for_v1_clients(self) -> None:
+        feed = build_feed()
+        stripped = json.loads(json.dumps(feed))
+        for game in stripped["games"]:
+            game.pop("entryMethod")
+        self.assertEqual(validate_feed(stripped), [])
+
+        invalid = json.loads(json.dumps(feed))
+        invalid["games"][1]["entryMethod"] = {"playstation": "", "wii": "nope"}
+        errors = validate_feed(invalid)
+        self.assertTrue(any("unknown keys" in error for error in errors))
+        self.assertTrue(any("playstation" in error and "non-empty" in error for error in errors))
 
 if __name__ == "__main__":
     unittest.main()
