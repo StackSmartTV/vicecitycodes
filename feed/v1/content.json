@@ -14,7 +14,13 @@
         "Xbox One",
         "Xbox Series X|S",
         "PC"
-      ]
+      ],
+      "entryMethod": {
+        "playstation": "Enter the buttons during gameplay, or pause and enter them there. Story Mode only.",
+        "xbox": "Enter the buttons during gameplay, or pause and enter them there. Story Mode only.",
+        "pc": "Press ~ to open the console, then type the word. Story Mode only.",
+        "phone": "Open the in-game phone keypad and dial the number. This works on consoles and PC."
+      }
     },
     {
       "id": "gta6",
@@ -23,7 +29,13 @@
       "platforms": [
         "PS5",
         "Xbox Series X|S"
-      ]
+      ],
+      "entryMethod": {
+        "playstation": "Press Up on the D-pad to open the phone, hold L1, press R1, then enter the D-pad input. Cheats do nothing until you finish all 91 story missions. Using a cheat disables saving and trophies for that session.",
+        "xbox": "Press Up on the D-pad to open the phone, hold LB, press RB, then enter the D-pad input. Cheats do nothing until you finish all 91 story missions. Using a cheat disables saving and trophies for that session.",
+        "pc": "Grand Theft Auto VI is not on PC, and no PC cheat codes are confirmed.",
+        "phone": "These cheats are not entered as phone numbers. On PlayStation or Xbox, press Up on the D-pad to open the phone, hold L1 or LB, press R1 or RB, then enter the D-pad input. Cheats do nothing until you finish all 91 story missions. Using a cheat disables saving and trophies for that session."
+      }
     }
   ],
   "cheats": [
