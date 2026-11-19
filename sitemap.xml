@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://vicecodeshub.com/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/"/>
@@ -134,7 +134,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/creators.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/creators.html"/>
@@ -149,7 +149,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/es/creadores.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/creators.html"/>
@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/about.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -254,7 +254,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/gta-6-beginners-guide.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-beginners-guide.html"/>
@@ -262,7 +262,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/gta-6-release-date-platforms-price.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-release-date-platforms-price.html"/>
@@ -270,7 +270,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/gta-6-map-leonida-vice-city-locations.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-map-leonida-vice-city-locations.html"/>
@@ -278,7 +278,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/gta-6-characters-jason-lucia.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-characters-jason-lucia.html"/>
@@ -294,7 +294,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/gta-6-faq.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-faq.html"/>
@@ -302,7 +302,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/guides.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/guides.html"/>
@@ -310,7 +310,7 @@
   </url>
   <url>
     <loc>https://vicecodeshub.com/news.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/news.html"/>
@@ -323,5 +323,13 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-launch-week-midnight-unlock-second-update-youtube-stream.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/gta-6-launch-week-midnight-unlock-second-update-youtube-stream.html"/>
+  </url>
+  <url>
+    <loc>https://vicecodeshub.com/gta-6-out-now-launch-day-guide.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vicecodeshub.com/gta-6-out-now-launch-day-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vicecodeshub.com/gta-6-out-now-launch-day-guide.html"/>
   </url>
 </urlset>

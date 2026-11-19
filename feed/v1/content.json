@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-18T00:00:00Z",
+  "updatedAt": "2026-11-19T00:00:00Z",
   "games": [
     {
       "id": "gta5",
@@ -1944,6 +1944,13 @@
   ],
   "news": [
     {
+      "id": "gta6-now-available",
+      "title": "Grand Theft Auto VI is out now",
+      "date": "2026-11-19",
+      "summary": "Take-Two announced that Grand Theft Auto VI is now available on PlayStation 5 and Xbox Series X|S, launching as the highest rated game of all time.",
+      "url": "https://taketwointeractivesoftwareinc.gcs-web.com/news-releases/news-release-details/rockstar-games-announces-grand-theft-auto-vi-now-available"
+    },
+    {
       "id": "gta6-cheats-last-checked",
       "title": "17 verified GTA 6 cheat codes added",
       "date": "2026-11-18",
@@ -2016,20 +2023,20 @@
   ],
   "checklist": [
     {
-      "id": "pre-load-is-live-opened-november-10",
-      "title": "Pre-load is live (opened November 10)",
-      "detail": "Digital pre-orders can begin pre-loading on November 10, 2026 (midnight local time on PS5, 12 a.m. GMT on Xbox Series X|S), before the November 19, 2026 launch. Source: https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
-      "group": "launch-prep"
-    },
-    {
-      "id": "install-the-pre-launch-updates-1-002-000-about-1-gb-and-01-002-001-about-600-mb-sizes-reported",
-      "title": "Install the pre-launch updates (1.002.000, about 1 GB, and 01.002.001, about 600 MB; sizes reported)",
+      "id": "gta-6-is-out-now-it-unlocked-at-midnight-local-time-on-november-19-ps5-and-xbox-series-x-s",
+      "title": "GTA 6 is out now: it unlocked at midnight local time on November 19 (PS5 and Xbox Series X|S)",
       "detail": null,
       "group": "launch-prep"
     },
     {
-      "id": "gta-6-unlocks-at-midnight-local-time-on-november-19-ps5-and-xbox",
-      "title": "GTA 6 unlocks at midnight local time on November 19 (PS5 and Xbox)",
+      "id": "pre-load-opened-november-10-if-you-skipped-it-the-full-download-needs-up-to-212-gb",
+      "title": "Pre-load opened November 10; if you skipped it, the full download needs up to 212 GB",
+      "detail": "Digital pre-orders can begin pre-loading on November 10, 2026 (midnight local time on PS5, 12 a.m. GMT on Xbox Series X|S), before the November 19, 2026 launch. Source: https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+      "group": "launch-prep"
+    },
+    {
+      "id": "install-the-latest-updates-1-002-000-about-1-gb-and-01-002-001-about-600-mb-sizes-reported-and-the-ps5-system-update",
+      "title": "Install the latest updates (1.002.000, about 1 GB, and 01.002.001, about 600 MB; sizes reported) and the PS5 system update",
       "detail": null,
       "group": "launch-prep"
     },

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Vice City Codes//GTA 6 calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gta6-tga@vicecodeshub.com
+DTSTAMP:20261101T160000Z
+DTSTART:20261211T003000Z
+DTEND:20261211T033000Z
+SUMMARY:GTA 6: The Game Awards 2026
+DESCRIPTION:GTA 6 leads with 8 nominations\, including Game of the Year. 7:30 PM ET. Source: https://www.gamespot.com/articles/gta-6-leads-tga-nominations-and-reviews-arent-even-live-yet/ | More at https://vicecodeshub.com/
+URL:https://vicecodeshub.com/
+END:VEVENT
+END:VCALENDAR
