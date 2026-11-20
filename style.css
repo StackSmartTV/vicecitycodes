@@ -489,6 +489,16 @@ footer .fan-disclaimer {
 .post-toc a[aria-current]{color:var(--neon-cyan);font-weight:700}
 .post-body h3[id],.post-sources h3{scroll-margin-top:84px}
 @media(prefers-reduced-motion:no-preference){html:has(.post-toc){scroll-behavior:smooth}}
+
+/* 2026-11-20: glitch status badges + scam warning box */
+.glitch-status{display:inline-block;margin-left:.35rem;padding:.18rem .55rem;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;vertical-align:.15em;white-space:nowrap;line-height:1.2}
+.glitch-status--verified{background:#0f5132;color:#d1f7e4;border:1px solid rgba(0,255,136,.5);box-shadow:0 0 8px rgba(0,255,136,.35)}
+.glitch-status--unconfirmed{background:#664d03;color:#fff3cd;border:1px solid rgba(255,196,0,.5);box-shadow:0 0 8px rgba(255,196,0,.3)}
+.glitch-status--patched{background:#58151c;color:#f8d7da;border:1px solid rgba(255,80,80,.5);box-shadow:0 0 8px rgba(255,45,80,.35)}
+.glitch-warn{margin:1.6rem 0 1.2rem;padding:1rem 1.15rem;border-radius:12px;background:rgba(88,21,28,.35);border:1px solid rgba(255,80,80,.4);border-left:3px solid #ff4d4d}
+.glitch-warn h3{margin:.1rem 0 .55rem;color:#f8d7da;font-size:1.15rem}
+.glitch-warn p{margin:0}
+@media(max-width:699px){.glitch-status{display:inline-block;margin:.25rem .25rem 0 0}}
 /* /vch-posts */
 
 /* vch-fitcheck v1: 'Will GTA 6 fit?' storage checker */
