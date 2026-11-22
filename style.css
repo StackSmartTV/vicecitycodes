@@ -683,3 +683,23 @@ footer .fan-disclaimer {
 .vfx-src{margin:0 .8rem .7rem;font-size:.8rem;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.vfx *{transition:none!important}}
 /* /vch-fixfinder */
+
+/* vch-newssearch v1: news archive search + topic filter */
+.vns-tools{margin:1rem 0 1.1rem;padding:.9rem 1rem;border-radius:12px;background:rgba(13,0,21,.55);border:1px solid rgba(0,240,255,.35)}
+.vns-tools[hidden],.vns-empty[hidden],.vns-list>li[hidden]{display:none}
+.vns-label{display:block;font:700 .95rem/1.3 system-ui,sans-serif;color:var(--text);margin-bottom:.35rem}
+.vns-q{width:100%;box-sizing:border-box;min-height:48px;padding:.6rem .9rem;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:#0d0015;color:var(--text);font:1rem system-ui,sans-serif}
+.vns-q::placeholder{color:#b9a8c9}
+.vns-q:focus-visible{outline:2px solid #00f0ff;outline-offset:2px;border-color:#00f0ff}
+.vns-chips{display:flex;gap:.5rem;margin-top:.7rem;overflow-x:auto;padding-bottom:.25rem;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.vns-chips button{flex:0 0 auto;min-height:44px;padding:.3rem .95rem;border-radius:999px;border:1px solid rgba(0,240,255,.5);background:transparent;color:var(--text);font:700 .88rem system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.vns-chips button[aria-pressed="true"]{background:linear-gradient(90deg,#ff2d95,#ff7a3d);border-color:transparent;color:#fff;box-shadow:0 0 12px rgba(255,45,149,.45)}
+.vns-chips button:focus-visible,.vns-clear:focus-visible{outline:2px solid #00f0ff;outline-offset:2px}
+.vns-count{margin:.6rem 0 0;font:700 .85rem/1.3 system-ui,sans-serif;color:var(--neon-cyan)}
+.vns-empty{margin:1rem 0;padding:.9rem 1rem;border-radius:12px;border:1px dashed rgba(255,255,255,.3)}
+.vns-empty a{color:var(--neon-cyan);text-decoration:underline}
+.vns-clear{min-height:44px;margin-left:.3rem;padding:.3rem .9rem;border-radius:999px;border:1px solid var(--neon-pink);background:transparent;color:var(--text);font:700 .88rem system-ui,sans-serif;cursor:pointer}
+.news-more{margin:.9rem 0 0;font-weight:700}
+.news-more a{color:var(--neon-cyan);text-decoration:underline;display:inline-block;min-height:44px;line-height:44px}
+@media (min-width:700px){.vns-chips{flex-wrap:wrap;overflow:visible}}
+/* /vch-newssearch */
