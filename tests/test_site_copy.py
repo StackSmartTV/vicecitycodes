@@ -71,8 +71,12 @@ class SiteCopyTest(unittest.TestCase):
             for video_id in retired_ids:
                 self.assertNotIn(video_id, text, path)
             if path.suffix == ".html":
-                self.assertNotIn("youtube.com/shorts/", text, path)
+                # Click-to-load Shorts may use youtube.com/shorts/<id> as a no-JS fallback.
+                # Direct nocookie iframes stay out of the HTML so nothing loads before a click.
                 self.assertNotIn("youtube-nocookie.com/embed/", text, path)
+                allowed_shorts = {"Lu_y6FayCdU"}
+                for video_id in re.findall(r"youtube\.com/shorts/([\w-]{11})", text):
+                    self.assertIn(video_id, allowed_shorts, path)
             if path.suffix != ".html" or "vh-yt" not in text:
                 continue
             pages.append(path)
