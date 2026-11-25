@@ -499,6 +499,17 @@ footer .fan-disclaimer {
 .glitch-warn h3{margin:.1rem 0 .55rem;color:#f8d7da;font-size:1.15rem}
 .glitch-warn p{margin:0}
 @media(max-width:699px){.glitch-status{display:inline-block;margin:.25rem .25rem 0 0}}
+/* topic chips + topic-aware Read next (2026-11-25) */
+.post-topics{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .5rem;margin:.2rem 0 .8rem;font-size:.85rem}
+.post-topics .pt-lab{color:var(--muted)}
+.post-topics ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.post-topics a{display:inline-flex;align-items:center;min-height:44px;padding:0 .85rem;border-radius:999px;border:1px solid var(--neon-cyan);color:var(--neon-cyan);text-decoration:none;font-weight:700;line-height:1}
+.post-topics a:hover,.post-topics a:focus-visible{background:rgba(0,229,255,.12);box-shadow:0 0 10px rgba(0,229,255,.35)}
+.post-topics a:focus-visible{outline:2px solid var(--neon-pink);outline-offset:2px}
+.rn-more{margin:1rem 0 0;text-align:center}
+.rn-more a{display:inline-flex;align-items:center;gap:.35rem;min-height:44px;padding:0 1.1rem;border-radius:999px;border:1px solid var(--neon-pink);color:var(--text);font-weight:700;text-decoration:none}
+.rn-more a:hover,.rn-more a:focus-visible{background:rgba(255,46,151,.12);box-shadow:0 0 12px rgba(255,46,151,.35)}
+@media(prefers-reduced-motion:reduce){.post-topics a,.rn-more a{transition:none}}
 /* /vch-posts */
 
 /* vch-fitcheck v1: 'Will GTA 6 fit?' storage checker */
