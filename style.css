@@ -714,3 +714,40 @@ footer .fan-disclaimer {
 .news-more a{color:var(--neon-cyan);text-decoration:underline;display:inline-block;min-height:44px;line-height:44px}
 @media (min-width:700px){.vns-chips{flex-wrap:wrap;overflow:visible}}
 /* /vch-newssearch */
+
+/* vch-quiz v1: GTA 6 quick quiz */
+.vqz{margin-top:1rem;border:1px solid rgba(0,240,255,.35)}
+.vqz h3{margin-bottom:.3rem}
+.vqz-note{font-size:.92rem;color:var(--muted);margin-bottom:.7rem}
+.vqz-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;margin-bottom:.6rem}
+.vqz-bar[hidden]{display:none}
+.vqz-score{font:700 .95rem/1.3 system-ui,sans-serif;color:var(--neon-cyan)}
+.vqz-fin .vqz-score{color:#ff2d95}
+.vqz-again{min-height:44px;padding:.3rem .9rem;border-radius:999px;border:1px solid rgba(0,240,255,.5);background:transparent;color:var(--text);font:700 .85rem system-ui,sans-serif;cursor:pointer}
+.vqz-again[hidden]{display:none}
+.vqz-again:hover,.vqz-again:focus-visible{border-color:#ff2d95;color:#ff2d95}
+.vqz-q{border:0;border-top:1px solid rgba(255,255,255,.08);margin:0;padding:.7rem 0 .5rem;min-width:0}
+.vqz-q legend{float:left;width:100%;padding:0;margin-bottom:.45rem;font-weight:700;color:var(--text)}
+.vqz-q legend+*{clear:both}
+.vqz-n{color:#ff2d95}
+.vqz-opts{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+@media (min-width:700px){.vqz-opts{grid-template-columns:repeat(3,1fr)}}
+.vqz-opts label{display:flex;align-items:center;gap:.55rem;min-height:44px;padding:.35rem .7rem;border:1px solid rgba(201,179,230,.35);border-radius:10px;cursor:pointer;color:var(--text);font-size:.92rem;overflow-wrap:anywhere}
+.vqz-opts label:hover{border-color:#00f0ff}
+.vqz-opts input{flex:0 0 auto;width:1.15rem;height:1.15rem;margin:0;accent-color:#ff2d95}
+.vqz-opts input:focus-visible{outline:2px solid #00f0ff;outline-offset:2px}
+.vqz-opts input:disabled+span{opacity:1}
+.vqz-right label{border-color:#3ddc97;background:rgba(61,220,151,.12)}
+.vqz-right label span::after{content:" ✓ correct";color:#3ddc97;font-weight:700}
+.vqz-wrong label{border-color:#ff5c7a;background:rgba(255,92,122,.12)}
+.vqz-wrong label span::after{content:" ✗ your pick";color:#ff8fa3;font-weight:700}
+.vqz-res{margin:.35rem 0 0;font-weight:700;min-height:0}
+.vqz-res:empty{display:none}
+.vqz-res.is-right{color:#3ddc97}
+.vqz-res.is-wrong{color:#ff8fa3}
+.vqz-ans{margin-top:.35rem;font-size:.9rem;color:var(--muted)}
+.vqz-ans summary{cursor:pointer;color:var(--neon-cyan);min-height:44px;display:flex;align-items:center}
+.vqz-ans.vqz-js summary{display:none}
+.vqz-ans p{margin:.2rem 0 0}
+.vqz-ans a{color:var(--neon-cyan);text-decoration:underline}
+/* /vch-quiz */
